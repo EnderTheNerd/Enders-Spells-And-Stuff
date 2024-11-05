@@ -1,15 +1,20 @@
 package net.ender.ironsweaponry.item;
 
 import io.redspace.ironsspellbooks.api.item.weapons.MagicSwordItem;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
+import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+
+import java.util.UUID;
 
 public class bloodthirst extends MagicSwordItem {
 
@@ -53,9 +58,14 @@ public class bloodthirst extends MagicSwordItem {
 
     public bloodthirst() {
         super(TOOL_TIER,
+
+
+
                 ItemPropertiesHelper.equipment()
+
                         .fireResistant()
-                        .rarity(Rarity.RARE).attributes(SwordItem.createAttributes(TOOL_TIER, 7f, -2.6f)),
+                        .rarity(Rarity.RARE).attributes(SwordItem.createAttributes(TOOL_TIER, 5f, -1.6f)),
+
                 SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.BLOOD_SLASH_SPELL, 7))
         );
     }
