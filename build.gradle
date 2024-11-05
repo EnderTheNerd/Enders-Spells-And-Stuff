@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '1.0.21'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -18,6 +19,7 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    mavenCentral()
 }
 
 base {
@@ -149,7 +151,8 @@ dependencies
 
         // ISS *****************************************************************************************************
         implementation("io.redspace:irons_spellbooks:${irons_spells_version}")
-}
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    }
 
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -203,4 +206,7 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
+}
+kotlin {
+    jvmToolchain(21)
 }
