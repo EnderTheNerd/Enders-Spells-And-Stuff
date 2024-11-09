@@ -23,9 +23,12 @@ public class ModItems {
 
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> UNSTABLE_SCRAP = ITEMS.register("unstable_scrap",
+
+            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BLOODTHIRST = ITEMS.register("bloodthirst", bloodthirst::new);
 
-
+    public static final DeferredItem<Item> OVERCHARGEDCORE = ITEMS.register("overchargedcore", overchargedsword::new);
 //Hi Gametech this is a new screenshot i promise
 
     public static void register(IEventBus eventBus) {

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "ironsweaponry:bloodthirst"
+    "ironsweaponry:bloodthirst",
+    "ironsweaponry:overchargedcore"
   ]
 }

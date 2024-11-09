@@ -30,6 +30,10 @@ public class ModCreativeModeTabs {
                          output.accept(ModItems.THUNDEROUS_POWDER);
 
                          output.accept(ModItems.BLOODTHIRST);
+
+                         output.accept(ModItems.OVERCHARGEDCORE);
+
+                         output.accept(ModItems.UNSTABLE_SCRAP);
                      })
 
                      .build()    );
