@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:petrified_oak"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+
+  },
+  "pattern": [
+
+    " AC",
+    "ACA",
+    "BA "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:grovekeeper"
+  }
+}

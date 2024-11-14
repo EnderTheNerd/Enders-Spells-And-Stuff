@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:energized_core"
+    },
+
+    "B": {
+      "item": "minecraft:diamond_sword"
+    },
+
+    "C": {
+      "item": "endersequipment:thunderous_powder"
+    },
+
+    "D": {
+      "item": "irons_spellbooks:weapon_parts"
+    }
+  },
+  "pattern": [
+
+    " CB",
+    "CAC",
+    "DC "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:overchargedcore"
+  }
+}

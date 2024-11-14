@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "minecraft:gold_ingot"
+    },
+
+    "B": {
+      "item": "minecraft:copper_ingot"
+    },
+    "C": {
+      "item": "minecraft:blaze_rod"
+    }
+
+  },
+  "pattern": [
+
+    "  C",
+    "AB ",
+    "   "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:wrought_gold"
+  }
+}

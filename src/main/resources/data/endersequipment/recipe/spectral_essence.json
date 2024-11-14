@@ -1,0 +1,27 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "minecraft:soul_sand"
+    },
+
+    "B": {
+      "item": "minecraft:soul_lantern"
+    }
+
+  },
+  "pattern": [
+
+    " B ",
+    " A ",
+    " B "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:spectral_essence"
+  }
+}

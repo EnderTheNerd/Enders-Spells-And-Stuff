@@ -1,0 +1,27 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:lightning_bottle"
+    },
+
+    "B": {
+      "item": "minecraft:redstone"
+    }
+
+  },
+  "pattern": [
+
+    "BBB",
+    "BAB",
+    "BBB"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:thunderous_powder"
+  }
+}

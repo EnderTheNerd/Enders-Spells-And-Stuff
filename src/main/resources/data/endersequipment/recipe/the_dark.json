@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+
+    "B": {
+      "item": "minecraft:pearlescent_froglight"
+    },
+
+    "C": {
+      "item": "endersequipment:mithril_rod"
+    },
+
+    "D": {
+      "item": "minecraft:wither_skeleton_skull"
+    }
+  },
+  "pattern": [
+
+    "DAB",
+    "ACA",
+    "CAD"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:the_dark"
+  }
+}

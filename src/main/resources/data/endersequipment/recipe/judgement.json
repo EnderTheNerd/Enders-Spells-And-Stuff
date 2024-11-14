@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:mithril_rod"
+    },
+
+    "B": {
+      "item": "minecraft:quartz"
+    },
+
+    "C": {
+      "item": "endersequipment:wrought_gold"
+    },
+
+    "D": {
+      "item": "irons_spellbooks:weapon_parts"
+    }
+  },
+  "pattern": [
+
+    " CB",
+    "BAC",
+    "DB "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:judgement"
+  }
+}

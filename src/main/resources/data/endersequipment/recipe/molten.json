@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:cinder_essence"
+    },
+
+    "B": {
+      "item": "minecraft:netherite_sword"
+    },
+
+    "C": {
+      "item": "minecraft:obsidian"
+    },
+
+    "D": {
+      "item": "irons_spellbooks:weapon_parts"
+    }
+  },
+  "pattern": [
+
+    " AA",
+    "CBA",
+    "DC "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:molten"
+  }
+}

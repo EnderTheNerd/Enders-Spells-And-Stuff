@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+
+    "B": {
+      "item": "minecraft:ochre_froglight"
+    },
+
+    "C": {
+      "item": "endersequipment:mithril_rod"
+    },
+
+    "D": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "pattern": [
+
+    "DAB",
+    "ACA",
+    "CAD"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:the_light"
+  }
+}

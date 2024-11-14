@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:mithril_scrap"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:raw_mithril"
+    },
+
+    "C": {
+      "item": "irons_spellbooks:mithril_ingot"
+    },
+
+    "D": {
+      "item": "irons_spellbooks:weapon_parts"
+    }
+  },
+  "pattern": [
+
+    "  C",
+    "BA ",
+    "D  "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:mithril_sword"
+  }
+}

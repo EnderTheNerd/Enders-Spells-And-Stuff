@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:spectral_essence"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "C": {
+      "item": "irons_spellbooks:magic_cloth"
+    }
+
+  },
+  "pattern": [
+
+    "  A",
+    "CA ",
+    "BC "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:spectral_blade"
+  }
+}

@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:unstable_scrap"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "C": {
+      "item": "minecraft:netherite_sword"
+    }
+
+  },
+  "pattern": [
+
+    " AC",
+    " BA",
+    "A  "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:chorussword"
+  }
+}

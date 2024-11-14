@@ -1,0 +1,27 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "minecraft:chain"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:mithril_ingot"
+    }
+
+  },
+  "pattern": [
+
+    " AB",
+    "ABA",
+    "BA "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:mithril_rod"
+  }
+}

@@ -1,7 +1,12 @@
 {
   "replace": false,
   "values": [
-    "ironsweaponry:bloodthirst",
-    "ironsweaponry:overchargedcore"
+    "endersequipment:bloodthirst",
+    "endersequipment:overchargedcore",
+ "endersequipment:chorussword",
+    "endersequipment:mithril_sword",
+    "endersequipment:molten",
+    "endersequipment:spectral_blade"
+
   ]
 }
