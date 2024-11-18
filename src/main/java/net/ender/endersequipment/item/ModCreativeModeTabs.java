@@ -61,6 +61,19 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.JUDGEMENT);
 
+                         output.accept(ModItems.COUNTERSTEEL);
+
+                         output.accept((ModItems.COUNTERSTEEL_GREATSWORD));
+
+                         output.accept(ModItems.COUNTERSTEEL_HELMET);
+
+                         output.accept(ModItems.COUNTERSTEEL_CHESTPLATE);
+
+                         output.accept(ModItems.COUNTERSTEEL_LEGGINGS);
+
+                         output.accept(ModItems.COUNTERSTEEL_BOOTS);
+
+
 
                      })
 

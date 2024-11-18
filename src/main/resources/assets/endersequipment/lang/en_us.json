@@ -17,6 +17,12 @@
   "item.endersequipment.spectral_essence": "Spectral Essence",
   "item.endersequipment.hailstorm": "Hailstorm",
   "item.endersequipment.judgement": "Judgement",
-  "item.endersequipment.wrought_gold": "Wrought Gold"
+  "item.endersequipment.wrought_gold": "Wrought Gold",
+  "item.endersequipment.countersteel": "Countersteel",
+  "item.endersequipment.countersteel_helmet": "Countersteel Helm",
+  "item.endersequipment.countersteel_chestplate": "Countersteel Chestplate",
+  "item.endersequipment.countersteel_leggings": "Countersteel Leggings",
+  "item.endersequipment.countersteel_boots": "Countersteel Boots",
+  "item.endersequipment.countersteel_greatsword": "Countersteel Greatsword"
 
 }

@@ -5,6 +5,7 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.item.weapons.ExtendedWeaponTier;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 
 public class EEItemTier implements Tier, IronsWeaponTier {
 
-    public static ExtendedWeaponTier BLOODTHIRST_SWORD = new ExtendedWeaponTier(2000, 4f, -2f, 20,
+    public static ExtendedWeaponTier BLOODTHIRST_SWORD = new ExtendedWeaponTier(2000, 6f, -1.8f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.BLOODSHARD),
             new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
@@ -32,10 +33,10 @@ public class EEItemTier implements Tier, IronsWeaponTier {
     public static ExtendedWeaponTier CHORUSSWORD = new ExtendedWeaponTier(2300, 8f, -2f, 30,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.UNSTABLE_SCRAP),
-            new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
-    public static ExtendedWeaponTier GROVEKEEPER = new ExtendedWeaponTier(1800, 6f, -2.2f, 30,
+    public static ExtendedWeaponTier GROVEKEEPER = new ExtendedWeaponTier(1800, 7f, -2.1f, 30,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.UNSTABLE_SCRAP),
             new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
@@ -43,13 +44,13 @@ public class EEItemTier implements Tier, IronsWeaponTier {
 
     public static ExtendedWeaponTier MITHRIL_SWORD = new ExtendedWeaponTier(2400, 8f, -2.7f, 30,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
-            () -> Ingredient.of(Items.DIAMOND_BLOCK),
-            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.MANA_REGEN,.05,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            () -> Ingredient.of(ItemRegistry.MITHRIL_INGOT.get()),
+            new AttributeContainer(AttributeRegistry.SPELL_RESIST, .1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, .1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.MANA_REGEN,.1,AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
-    public static ExtendedWeaponTier THE_DARK = new ExtendedWeaponTier(900, 2f, -2.7f, 30,
+    public static ExtendedWeaponTier THE_DARK = new ExtendedWeaponTier(900, 3f, -2.7f, 30,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.NETHERITE_INGOT),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, -0.35, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
@@ -58,7 +59,7 @@ public class EEItemTier implements Tier, IronsWeaponTier {
 
 
 
-    public static ExtendedWeaponTier THE_LIGHT = new ExtendedWeaponTier(900, 2f, -2.7f, 30,
+    public static ExtendedWeaponTier THE_LIGHT = new ExtendedWeaponTier(900, 3f, -2.7f, 30,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.PRISMARINE_CRYSTALS),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.35, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
@@ -81,10 +82,17 @@ public class EEItemTier implements Tier, IronsWeaponTier {
             () -> Ingredient.of(Items.BLUE_ICE),
             new AttributeContainer(AttributeRegistry.ICE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
-    public static ExtendedWeaponTier JUDGEMENT = new ExtendedWeaponTier(2300, 12f, -3.2f, 30,
+    public static ExtendedWeaponTier JUDGEMENT = new ExtendedWeaponTier(2300, 11f, -3.3f, 30,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(Items.GOLD_BLOCK),
-            new AttributeContainer(AttributeRegistry.HOLY_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.HOLY_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier COUNTERSTEEL_GREATSWORD = new ExtendedWeaponTier(2300, 9f, -2.9f, 30,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(ModItems.COUNTERSTEEL),
+            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, -.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
 
 
     int uses;

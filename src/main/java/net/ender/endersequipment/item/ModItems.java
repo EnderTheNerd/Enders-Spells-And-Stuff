@@ -1,6 +1,9 @@
 package net.ender.endersequipment.item;
 
+import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.ender.endersequipment.endersequipment;
+import net.ender.endersequipment.item.swordtiers.*;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -35,6 +38,9 @@ public class ModItems {
     public static final DeferredItem<Item> WROUGHTGOLD = ITEMS.register("wrought_gold",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> COUNTERSTEEL = ITEMS.register("countersteel",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> BLOODTHIRST = ITEMS.register("bloodthirst", bloodthirst::new);
 
     public static final DeferredItem<Item> OVERCHARGEDCORE = ITEMS.register("overchargedcore", overchargedsword::new);
@@ -58,6 +64,19 @@ public class ModItems {
     public static final DeferredItem<Item> JUDGEMENT = ITEMS.register("judgement", judgement::new);
 
 
+    public static final DeferredItem<ArmorItem> COUNTERSTEEL_HELMET = ITEMS.register("countersteel_helmet",
+            () -> new CountersteelArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment(1).durability(ArmorItem.Type.HELMET.getDurability(68))));
+
+    public static final DeferredItem<ArmorItem> COUNTERSTEEL_CHESTPLATE = ITEMS.register("countersteel_chestplate",
+            () -> new CountersteelArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper.equipment(1).durability(ArmorItem.Type.HELMET.getDurability(68))));
+
+    public static final DeferredItem<ArmorItem> COUNTERSTEEL_LEGGINGS = ITEMS.register("countersteel_leggings",
+            () -> new CountersteelArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper.equipment(1).durability(ArmorItem.Type.HELMET.getDurability(68))));
+
+    public static final DeferredItem<ArmorItem> COUNTERSTEEL_BOOTS = ITEMS.register("countersteel_boots",
+            () -> new CountersteelArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper.equipment(1).durability(ArmorItem.Type.HELMET.getDurability(68))));
+
+    public static final DeferredItem<Item> COUNTERSTEEL_GREATSWORD = ITEMS.register("countersteel_greatsword", countersteelgreatsword::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
