@@ -1,6 +1,7 @@
 package net.ender.endersequipment;
 
 
+import net.ender.endersequipment.effect.ModEffectRegistry;
 import net.ender.endersequipment.item.ModCreativeModeTabs;
 import net.ender.endersequipment.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -44,6 +45,8 @@ public class endersequipment {
         ModItems.register(modEventBus);
 
         ModCreativeModeTabs.register(modEventBus);
+
+        ModEffectRegistry.register(modEventBus);
 
 
         // Register the item to a creative tab
