@@ -41,6 +41,28 @@ public class ModItems {
     public static final DeferredItem<Item> COUNTERSTEEL = ITEMS.register("countersteel",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> COUNTERED_ESSENCE = ITEMS.register("countered_essence",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ARCANE_CORE = ITEMS.register("arcane_core",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ROTTEN_BONE = ITEMS.register("rotten_bone",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> PUTRID_FLESH = ITEMS.register("putrid_flesh",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> DREADSTEEL = ITEMS.register("dreadsteel",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> DREAD_HANDLE = ITEMS.register("dread_handle",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> TRANSMUTED_STICK = ITEMS.register("transmuted_stick",
+            () -> new Item(new Item.Properties()));
+
+
     public static final DeferredItem<Item> BLOODTHIRST = ITEMS.register("bloodthirst", bloodthirst::new);
 
     public static final DeferredItem<Item> OVERCHARGEDCORE = ITEMS.register("overchargedcore", overchargedsword::new);
@@ -62,6 +84,16 @@ public class ModItems {
     public static final DeferredItem<Item> HAILSTORM = ITEMS.register("hailstorm", hailstorm::new);
 
     public static final DeferredItem<Item> JUDGEMENT = ITEMS.register("judgement", judgement::new);
+
+    public static final DeferredItem<Item> COUNTERSTEEL_DAGGER = ITEMS.register("countersteel_dagger", countersteeldagger::new);
+
+    public static final DeferredItem<Item> COUNTERSTEEL_SWORD = ITEMS.register("countersteel_sword", countersteelsword::new);
+
+    public static final DeferredItem<Item> BROKEN_PROMISE = ITEMS.register("broken_promise", brokenpromise::new);
+
+    public static final DeferredItem<Item> SCYTHE_OF_ROTTED_DREAMS = ITEMS.register("scythe_of_rotted_dreams", scytheofrdreams::new);
+
+    public static final DeferredItem<Item> HEARTBEAT = ITEMS.register("heartbeat", heartbeat::new);
 
 
     public static final DeferredItem<ArmorItem> COUNTERSTEEL_HELMET = ITEMS.register("countersteel_helmet",

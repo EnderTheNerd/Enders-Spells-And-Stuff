@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:countersteel"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:mithril_ingot"
+    },
+    "C": {
+      "item": "endersequipment:mithril_rod"
+    }
+
+  },
+  "pattern": [
+
+    "  A",
+    " B ",
+    "C  "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:countersteel_dagger"
+  }
+}

@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:upgrade_orb"
+    },
+
+    "B": {
+      "item": "minecraft:nether_star"
+    },
+
+    "C": {
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+
+    "D": {
+      "item": "irons_spellbooks:mithril_ingot"
+    }
+  },
+  "pattern": [
+
+    "CBC",
+    "DAD",
+    "CBC"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:arcane_core"
+  }
+}

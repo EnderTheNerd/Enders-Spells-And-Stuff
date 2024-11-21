@@ -21,8 +21,7 @@ public class EEItemTier implements Tier, IronsWeaponTier {
     public static ExtendedWeaponTier BLOODTHIRST_SWORD = new ExtendedWeaponTier(2000, 6f, -1.8f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.BLOODSHARD),
-            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-    );
+            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static ExtendedWeaponTier OVERCHARGEDSWORD = new ExtendedWeaponTier(2000, 9f, -2.5f, 30,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
@@ -90,8 +89,38 @@ public class EEItemTier implements Tier, IronsWeaponTier {
     public static ExtendedWeaponTier COUNTERSTEEL_GREATSWORD = new ExtendedWeaponTier(2300, 9f, -2.9f, 30,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(ModItems.COUNTERSTEEL),
+            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, -.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier COUNTERSTEEL_DAGGER = new ExtendedWeaponTier(2000, 4f, -1.7f, 30,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(ModItems.COUNTERSTEEL),
+            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, -.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier COUNTERSTEEL_SWORD = new ExtendedWeaponTier(2200, 7f, -2.2f, 30,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(ModItems.COUNTERSTEEL),
             new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, -.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier BROKEN_PROMISE = new ExtendedWeaponTier(1000, 12f, -3.1f, 20,
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.BLOODSHARD),
+            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier SCYTHE_OF_R_DREAMS = new ExtendedWeaponTier(2000, 10f, -2.3f, 20,
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.ROTTEN_BONE),
+            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier HEARTBEAT = new ExtendedWeaponTier(2000, 12f, -3.1f, 20,
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.TRANSMUTED_STICK),
+            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
 

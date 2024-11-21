@@ -1,0 +1,22 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:dreadsteel"
+    }
+  },
+  "pattern": [
+
+    "  A",
+    " A ",
+    "A  "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:dread_handle"
+  }
+}

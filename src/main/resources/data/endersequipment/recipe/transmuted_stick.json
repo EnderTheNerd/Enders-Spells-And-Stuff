@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:dreadsteel"
+    },
+
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "C": {
+      "item": "minecraft:netherite_ingot"
+    }
+
+  },
+  "pattern": [
+
+    "   ",
+    "CBA",
+    "   "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:transmuted_stick"
+  }
+}

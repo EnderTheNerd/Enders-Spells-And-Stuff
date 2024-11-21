@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:dreadsteel"
+    },
+
+    "B": {
+      "item": "endersequipment:arcane_core"
+    },
+    "C": {
+      "item": "endersequipment:transmuted_stick"
+    }
+
+  },
+  "pattern": [
+
+    " AC",
+    "ABC",
+    "C  "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:heartbeat"
+  }
+}

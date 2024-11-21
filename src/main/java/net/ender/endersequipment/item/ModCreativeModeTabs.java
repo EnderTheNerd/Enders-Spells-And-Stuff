@@ -61,7 +61,13 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.JUDGEMENT);
 
+                         output.accept(ModItems.COUNTERED_ESSENCE);
+
                          output.accept(ModItems.COUNTERSTEEL);
+
+                         output.accept(ModItems.COUNTERSTEEL_DAGGER);
+
+                         output.accept(ModItems.COUNTERSTEEL_SWORD);
 
                          output.accept((ModItems.COUNTERSTEEL_GREATSWORD));
 
@@ -72,6 +78,25 @@ public class ModCreativeModeTabs {
                          output.accept(ModItems.COUNTERSTEEL_LEGGINGS);
 
                          output.accept(ModItems.COUNTERSTEEL_BOOTS);
+
+                         output.accept(ModItems.BROKEN_PROMISE);
+
+                         output.accept(ModItems.SCYTHE_OF_ROTTED_DREAMS);
+
+                         output.accept(ModItems.DREAD_HANDLE);
+
+                         output.accept(ModItems.DREADSTEEL);
+
+                         output.accept(ModItems.ROTTEN_BONE);
+
+                         output.accept(ModItems.PUTRID_FLESH);
+
+                         output.accept(ModItems.ARCANE_CORE);
+
+                         output.accept(ModItems.TRANSMUTED_STICK);
+
+                         output.accept(ModItems.HEARTBEAT);
+
 
 
 

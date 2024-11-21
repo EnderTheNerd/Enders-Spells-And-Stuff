@@ -1,0 +1,27 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:countersteel"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:mithril_ingot"
+    }
+
+  },
+  "pattern": [
+
+    "   ",
+    "A A",
+    "B B"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:countersteel_boots"
+  }
+}

@@ -3,10 +3,17 @@
   "values": [
     "endersequipment:bloodthirst",
     "endersequipment:overchargedcore",
- "endersequipment:chorussword",
+    "endersequipment:chorussword",
     "endersequipment:mithril_sword",
     "endersequipment:molten",
-    "endersequipment:spectral_blade"
+    "endersequipment:spectral_blade",
+    "endersequipment:countersteel_greatsword",
+    "endersequipment:countersteel_dagger",
+    "endersequipment:countersteel_sword",
+    "endersequipment:broken_promise",
+
+    "endersequipment:heartbeat"
+
 
   ]
 }

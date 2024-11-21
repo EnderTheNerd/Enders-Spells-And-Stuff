@@ -1,0 +1,27 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "minecraft:iron_ingot"
+    },
+
+    "B": {
+      "item": "endersequipment:countered_essence"
+    }
+
+  },
+  "pattern": [
+
+    "BBB",
+    "BAB",
+    "BBB"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:countersteel"
+  }
+}
