@@ -107,21 +107,28 @@ public class EEItemTier implements Tier, IronsWeaponTier {
     public static ExtendedWeaponTier BROKEN_PROMISE = new ExtendedWeaponTier(1000, 12f, -3.1f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.BLOODSHARD),
-            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static ExtendedWeaponTier SCYTHE_OF_R_DREAMS = new ExtendedWeaponTier(2000, 10f, -2.3f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.ROTTEN_BONE),
-            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static ExtendedWeaponTier HEARTBEAT = new ExtendedWeaponTier(2000, 12f, -3.1f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.TRANSMUTED_STICK),
-            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
+    public static ExtendedWeaponTier RUNIC_BLADE = new ExtendedWeaponTier(8000, 10f, -2.3f, 50,
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+            () -> Ingredient.of(ItemRegistry.BLANK_RUNE.get()),
+            new AttributeContainer(AttributeRegistry.MAX_MANA, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.MANA_REGEN, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                                   );
 
 
     int uses;

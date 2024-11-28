@@ -1,0 +1,30 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:arcane_core"
+    },
+
+    "B": {
+      "item": "irons_spellbooks:blank_rune"
+    },
+    "C": {
+      "item": "endersequipment:mithril_sword"
+    }
+
+  },
+  "pattern": [
+
+    " BB",
+    "BAB",
+    "CB "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:runic_sword"
+  }
+}
