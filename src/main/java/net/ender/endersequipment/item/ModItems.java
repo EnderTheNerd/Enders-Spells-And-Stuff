@@ -1,13 +1,18 @@
 package net.ender.endersequipment.item;
 
+import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.ender.endersequipment.endersequipment;
+import net.ender.endersequipment.item.curios.WardingCharm;
 import net.ender.endersequipment.item.swordtiers.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
+
 public class ModItems {
 
 
@@ -109,6 +114,10 @@ public class ModItems {
             () -> new CountersteelArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper.equipment(1).durability(ArmorItem.Type.HELMET.getDurability(68))));
 
     public static final DeferredItem<Item> COUNTERSTEEL_GREATSWORD = ITEMS.register("countersteel_greatsword", countersteelgreatsword::new);
+
+    public static final DeferredItem<CurioBaseItem> WARDINGCHARM = ITEMS.register("wardingcharm", WardingCharm::new);
+
+    public static final DeferredItem<Item> RUNIC_SWORD = ITEMS.register("runic_sword", runicblade::new);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

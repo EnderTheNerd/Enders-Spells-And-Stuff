@@ -97,6 +97,10 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.HEARTBEAT);
 
+                         output.accept(ModItems.WARDINGCHARM);
+
+                         output.accept(ModItems.RUNIC_SWORD);
+
 
 
 

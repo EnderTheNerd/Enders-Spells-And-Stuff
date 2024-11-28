@@ -6,6 +6,7 @@ import net.ender.endersequipment.item.ModCreativeModeTabs;
 import net.ender.endersequipment.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
+import net.ender.endersequipment.SpellRegistry;
 
 import com.mojang.logging.LogUtils;
 
@@ -48,7 +49,9 @@ public class endersequipment {
 
         ModEffectRegistry.register(modEventBus);
 
+        SpellRegistry.register(modEventBus);
 
+        NeoForge.EVENT_BUS.register(this);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
