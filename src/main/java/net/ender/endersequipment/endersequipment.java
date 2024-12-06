@@ -1,15 +1,11 @@
 package net.ender.endersequipment;
 
 
-import net.ender.endersequipment.effect.ModEffectRegistry;
+import net.ender.endersequipment.registries.*;
 import net.ender.endersequipment.item.ModCreativeModeTabs;
 import net.ender.endersequipment.item.ModItems;
-import net.ender.endersequipment.registries.EEAttributeRegistry;
-import net.ender.endersequipment.registries.EEDamageTypes;
-import net.ender.endersequipment.registries.EESchoolRegistry;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
-import net.ender.endersequipment.registries.SpellRegistry;
 
 import com.mojang.logging.LogUtils;
 
@@ -58,7 +54,7 @@ public class endersequipment {
 
         EESchoolRegistry.register(modEventBus);
 
-
+        EntityRegistry.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);

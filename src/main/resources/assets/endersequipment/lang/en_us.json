@@ -68,10 +68,32 @@
   "spell.endersequipment.tentacle_whip": "Tentacle Whip",
   "spell.endersequipment.tentacle_whip.guide": "Summon a singular tentacle from the ground at a target.",
   "spell.endersequipment.slash.guide": "Infuse your muscles with mana to quickly slash in front of you.",
+  "spell.endersequipment.supernova": "Supernova",
+  "spell.endersequipment.supernova.guide": "Sacrifice your life to unleash a devasting explosion, eradicating most life in its path. ",
+  "spell.endersequipment.extinction": "Extinction",
+  "spell.endersequipment.extinction.guide": "The true ancient form of Starfall, restored to its former power. Annihilate everything where this spell is cast.",
+  "spell.endersequipment.sanguine_implosion": "Sanguine Implosion",
+  "spell.endersequipment.sanguine_implosion.guide": "The true ancient form of Sacrifice, restored to its former power. Force your summons to implode in a devastating explosion.",
+  "spell.endersequipment.soul_stop": "Soul Stop",
+  "spell.endersequipment.soul_stop.guide": "An ancient spell. Hold your soul into your body, preventing death once.",
   "item.endersequipment.wardingcharm.desc": "This Odd Necklace writhes around your neck every time something bad comes your way.",
   "item.endersequipment.wardingcharm": "Broken Dreams",
 "ui.endersequipment.armor_points": "%d%% Gained Armor",
   "item.endersequipment.runic_sword": "Fate",
-  "death.attack.endersequipment.supernova": "%1$s had their being erased by %2$s's supernova"
+  "spell.endersequipment.meteor": "Meteor",
+  "spell.endersequipment.meteor.guide": "The true ancient form of Fireball, restored to its former power. Send out a massive meteor that can make even the heaviest armored foes fall.",
+  "death.attack.endersequipment.supernova": "%1$s had their being erased by %2$s's supernova",
+  "school.endersequipment.primeval": "Primeval",
+  "entity.endersequipment.summoned_ravager": "Summoned Ravager",
+  "effect.endersequipment.summoned_ravager": "Summoned Ravager",
+  "spell.endersequipment.zeus_spear": "Zeus' Spear",
+  "spell.endersequipment.zeus_spear.guide": "The true ancient form of Lightning Lance, restored to its former power. Fire out a giant lance that could pierce even the strongest netherite.",
+  "spell.endersequipment.impulse": "Impulse",
+  "spell.endersequipment.impulse.guide": "The true ancient form of Shockwave, restored to its former power. Turn your body into a grenade, sending lightning everywhere.",
+  "spell.endersequipment.summon_ravager": "Call Ravager",
+  "spell.endersequipment.summon_ravager.guide": "Call forth a mighty ravager to fight for you.",
+  "spell.endersequipment.voids_rebound": "Void's Rebound",
+  "spell.endersequipment.voids_rebound.guide": "The true ancient form of Echoing Strikes, restored to its former power. Let the void enhance your strikes, slamming into the ground with wroth force."
+
 
 }

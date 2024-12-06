@@ -44,7 +44,7 @@ public class GreaterWispSpell extends AbstractSpell {
             .setMinRarity(SpellRarity.RARE)
             .setSchoolResource(SchoolRegistry.HOLY_RESOURCE)
             .setMaxLevel(5)
-            .setCooldownSeconds(350)
+            .setCooldownSeconds(130)
             .build();
 
     public GreaterWispSpell() {

@@ -6,12 +6,8 @@ import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.*;
 import io.redspace.ironsspellbooks.api.util.AnimationHolder;
 import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.effect.ChargeEffect;
-import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
-import net.ender.endersequipment.effect.ModEffectRegistry;
-import net.ender.endersequipment.effect.StrainedEffect;
+import net.ender.endersequipment.registries.ModEffectRegistry;
 import net.ender.endersequipment.endersequipment;
-import net.ender.endersequipment.registries.EESchoolRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -33,7 +29,7 @@ public class StrainSpell extends AbstractSpell {
 
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.EPIC)
-            .setSchoolResource(EESchoolRegistry.PRIMEVAL_RESOURCE)
+            .setSchoolResource(SchoolRegistry.BLOOD_RESOURCE)
             .setMaxLevel(5)
             .setCooldownSeconds(200)
             .build();

@@ -14,7 +14,7 @@ import io.redspace.ironsspellbooks.damage.SpellDamageSource;
 import io.redspace.ironsspellbooks.particle.BlastwaveParticleOptions;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
-import net.ender.endersequipment.effect.ModEffectRegistry;
+import net.ender.endersequipment.registries.ModEffectRegistry;
 import net.ender.endersequipment.endersequipment;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -54,7 +54,7 @@ public class SupernovaSpell extends AbstractSpell {
 
     public SupernovaSpell() {
         this.manaCostPerLevel = 100;
-        this.baseSpellPower = 128;
+        this.baseSpellPower = 150;
         this.spellPowerPerLevel = 0;
         this.castTime = 200;
         this.baseManaCost = 500;

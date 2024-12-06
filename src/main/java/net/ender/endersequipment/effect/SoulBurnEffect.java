@@ -11,7 +11,7 @@ public class SoulBurnEffect extends MagicMobEffect {
 
     }
     public boolean applyEffectTick(LivingEntity p_296279_, int p_294798_) {
-        p_296279_.hurt(p_296279_.damageSources().fellOutOfWorld(), 80F);
+        p_296279_.hurt(p_296279_.damageSources().genericKill(), 80F);
         return true;
     }
 

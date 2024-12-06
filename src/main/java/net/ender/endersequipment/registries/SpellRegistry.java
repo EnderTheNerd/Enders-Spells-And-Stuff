@@ -13,6 +13,7 @@ import net.ender.endersequipment.spells.blood.StrainSpell;
 import net.ender.endersequipment.spells.eldritch.TentacleShieldSpell;
 import net.ender.endersequipment.spells.ender.SupernovaSpell;
 import net.ender.endersequipment.spells.evocation.SlashSpell;
+import net.ender.endersequipment.spells.evocation.SummonRavagerSpell;
 import net.ender.endersequipment.spells.fire.EruptionSpell;
 import net.ender.endersequipment.spells.holy.AnglesBlessingSpell;
 import net.ender.endersequipment.spells.holy.GreaterWispSpell;
@@ -21,6 +22,7 @@ import net.ender.endersequipment.spells.lightning.RiseSpell;
 import net.ender.endersequipment.spells.evocation.GigantismSpell;
 import net.ender.endersequipment.spells.evocation.MinimizeSpell;
 import net.ender.endersequipment.spells.ice.FrostedSlamSpell;
+import net.ender.endersequipment.spells.primeval.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -50,6 +52,13 @@ public class SpellRegistry {
         public static final Supplier<AbstractSpell> ERUPTION =registerSpell(new EruptionSpell());
         public static final Supplier<AbstractSpell> WHIP =registerSpell(new TentacleShieldSpell());
         public static final Supplier<AbstractSpell> SUPERNOVA =registerSpell(new SupernovaSpell());
+        public static final Supplier<AbstractSpell> EXTINCTION =registerSpell(new ExtinctionSpell());
+        public static final Supplier<AbstractSpell> METEOR =registerSpell(new MeteorSpell());
+        public static final Supplier<AbstractSpell> SANGUINE =registerSpell(new SanguineImplosionSpell());
+        public static final Supplier<AbstractSpell> ZEUS =registerSpell(new ZeusSpearSpell());
+        public static final Supplier<AbstractSpell> IMPULSE =registerSpell(new ImpulseSpell());
+        public static final Supplier<AbstractSpell> RAVAGER =registerSpell(new SummonRavagerSpell());
+        public static final Supplier<AbstractSpell> VOIDS =registerSpell(new VoidsReboundSpell());
 
 
         public static void register(IEventBus eventBus)

@@ -1,7 +1,7 @@
 package net.ender.endersequipment.events;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
-import net.ender.endersequipment.effect.ModEffectRegistry;
+import net.ender.endersequipment.registries.ModEffectRegistry;
 import net.ender.endersequipment.item.swordtiers.bloodthirst;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -10,6 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 
 @EventBusSubscriber
 public class ModEvents {
@@ -33,6 +34,9 @@ public class ModEvents {
 
     }
 
+
+
+
     @SubscribeEvent
     public static void onPlayerLivingDamage1(LivingDamageEvent.Post event) {
         var attacked = event.getEntity();
@@ -46,6 +50,8 @@ public class ModEvents {
 
 
     }
+
+
 
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent.Post event) {
