@@ -47,7 +47,7 @@ public class ExtinctionSpell extends AbstractPrimevalSpell {
             .setMinRarity(SpellRarity.LEGENDARY)
             .setSchoolResource(EESchoolRegistry.PRIMEVAL_RESOURCE)
             .setMaxLevel(1)
-            .setCooldownSeconds(180)
+            .setCooldownSeconds(210)
             .build();
 
     public ExtinctionSpell() {

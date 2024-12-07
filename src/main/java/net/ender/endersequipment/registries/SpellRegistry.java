@@ -5,8 +5,10 @@ import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 
 import io.redspace.ironsspellbooks.api.spells.AutoSpellConfig;
 import net.ender.endersequipment.endersequipment;
+import net.ender.endersequipment.entity.summoned_knight.SummonedKnight;
 import net.ender.endersequipment.spells.blood.BloodWaveSpell;
 import net.ender.endersequipment.spells.blood.BoilingBloodSpell;
+import net.ender.endersequipment.spells.blood.RaiseKnightsSpell;
 import net.ender.endersequipment.spells.blood.StrainSpell;
 
 
@@ -57,8 +59,14 @@ public class SpellRegistry {
         public static final Supplier<AbstractSpell> SANGUINE =registerSpell(new SanguineImplosionSpell());
         public static final Supplier<AbstractSpell> ZEUS =registerSpell(new ZeusSpearSpell());
         public static final Supplier<AbstractSpell> IMPULSE =registerSpell(new ImpulseSpell());
-        public static final Supplier<AbstractSpell> RAVAGER =registerSpell(new SummonRavagerSpell());
-        public static final Supplier<AbstractSpell> VOIDS =registerSpell(new VoidsReboundSpell());
+        public static final Supplier<AbstractSpell> SUMMON_RAVAGER =registerSpell(new SummonRavagerSpell());
+        public static final Supplier<AbstractSpell> SUMMON_KNIGHT =registerSpell(new RaiseKnightsSpell());
+        public static final Supplier<AbstractSpell> VOIDS_REBOUND =registerSpell(new VoidsReboundSpell());
+        public static final Supplier<AbstractSpell> ICEBERG =registerSpell(new IcebergSpell());
+        public static final Supplier<AbstractSpell> SNARLING_GROUND =registerSpell(new SnarlingGroundSpell());
+        public static final Supplier<AbstractSpell> EVISCERATE =registerSpell(new EviscerateSpell());
+        public static final Supplier<AbstractSpell> ARROW_STORM =registerSpell(new ArrowCloudSpell());
+
 
 
         public static void register(IEventBus eventBus)

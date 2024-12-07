@@ -93,7 +93,28 @@
   "spell.endersequipment.summon_ravager": "Call Ravager",
   "spell.endersequipment.summon_ravager.guide": "Call forth a mighty ravager to fight for you.",
   "spell.endersequipment.voids_rebound": "Void's Rebound",
-  "spell.endersequipment.voids_rebound.guide": "The true ancient form of Echoing Strikes, restored to its former power. Let the void enhance your strikes, slamming into the ground with wroth force."
+  "spell.endersequipment.voids_rebound.guide": "The true ancient form of Echoing Strikes, restored to its former power. Let the void enhance your strikes, slamming into the ground with wroth force.",
+"spell.endersequipment.iceberg": "Iceberg",
+  "spell.endersequipment.iceberg.guide": "The true ancient form of Iceblock, restored to its former power. Call forth a heavy block of ice, that falls almost as quickly as you summon it.",
+  "spell.endersequipment.snarling_ground": "Snarling Ground",
+  "spell.endersequipment.snarling_ground.guide": "The true ancient form of Fang Ward, restored to its former power. Call forth a horde of snapping teeth from the ground to devour your foes.",
+  "spell.endersequipment.eviscerate": "Eviscerate",
+  "spell.endersequipment.eviscerate.guide": "The true ancient form of Acupuncture, restored to its former power. Shred your foe with large blood needles.",
+  "spell.endersequipment.archers_paradise": "Siege Fire",
+  "spell.endersequipment.archers_paradise.guide": "The true ancient form of Arrow Volley, restored to its former power. Rain down endless amounts of arrows."
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -2,6 +2,7 @@ package net.ender.endersequipment.registries;
 
 import net.ender.endersequipment.endersequipment;
 
+import net.ender.endersequipment.entity.summoned_knight.SummonedKnight;
 import net.ender.endersequipment.entity.summoned_ravager.SummonedRavager;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -30,5 +31,11 @@ public class EntityRegistry {
 
 
 
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonedKnight>> SUMMONED_KNIGHT =
+            ENTITIES.register("summoned_knight", () -> EntityType.Builder.<SummonedKnight>of(SummonedKnight::new, MobCategory.CREATURE)
+
+                    .sized(1.4F, 1.4F)
+                    .clientTrackingRange(64)
+                    .build( ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "summoned_knight").toString()));
 
 }
