@@ -40,14 +40,10 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
         xpReward = 0;
     }
 
-
-
     public SummonedKnight(Level pLevel, LivingEntity owner) {
         this(EntityRegistry.SUMMONED_KNIGHT.get(), pLevel);
         setSummoner(owner);
     }
-
-
 
     protected LivingEntity cachedSummoner;
     protected UUID summonerUUID;
@@ -59,10 +55,8 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
 
     @Override
     public void registerGoals() {
-
-
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(4, new KeeperAnimatedWarlockAttackGoal(this, 1f, 10, 30, 3.5f));
+        //this.goalSelector.addGoal(4, new KeeperAnimatedWarlockAttackGoal(this, 1f, 10, 30, 3.5f));
         this.goalSelector.addGoal(5, new GenericFollowOwnerGoal(this, this::getSummoner, 0.9f, 15, 5, false, 25));
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
@@ -73,8 +67,9 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
         this.targetSelector.addGoal(3, new GenericCopyOwnerTargetGoal(this, this::getSummoner));
         this.targetSelector.addGoal(4, (new GenericHurtByTargetGoal(this, (entity) -> entity == getSummoner())).setAlertOthers());
 
-    }
+        super.registerGoals();
 
+    }
 
     @Override
     public LivingEntity getSummoner() {
@@ -116,13 +111,6 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
         super.addAdditionalSaveData(compoundTag);
         OwnerHelper.serializeOwner(compoundTag, summonerUUID);
     }
-
-
-    @Override
-    public boolean doHurtTarget(Entity pEntity) {
-        return false;
-    }
-
 
     @Override
     public boolean isAlliedTo(Entity pEntity) {
