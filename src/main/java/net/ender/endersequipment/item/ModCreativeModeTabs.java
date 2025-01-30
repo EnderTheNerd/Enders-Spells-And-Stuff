@@ -81,6 +81,8 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.BROKEN_PROMISE);
 
+                         output.accept(ModItems.FAITH);
+
                          output.accept(ModItems.SCYTHE_OF_ROTTED_DREAMS);
 
                          output.accept(ModItems.DREAD_HANDLE);
@@ -97,9 +99,15 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.HEARTBEAT);
 
+                         output.accept(ModItems.RUNIC_SWORD);
+
                          output.accept(ModItems.WARDINGCHARM);
 
-                         output.accept(ModItems.RUNIC_SWORD);
+                         output.accept(ModItems.WITHERWARD);
+
+                         output.accept(ModItems.GROW);
+
+                         output.accept(ModItems.SHRINK);
 
 
 

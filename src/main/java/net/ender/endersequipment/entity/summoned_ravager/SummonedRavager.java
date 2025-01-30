@@ -83,6 +83,8 @@ public class SummonedRavager extends Ravager implements IMagicSummon {
         }
     }
 
+
+
     @Override
     public void die(DamageSource pDamageSource) {
         this.onDeathHelper();
@@ -91,12 +93,14 @@ public class SummonedRavager extends Ravager implements IMagicSummon {
 
     @Override
     public void onRemovedFromLevel() {
-        this.onRemovedHelper(this, ModEffectRegistry.STRAINED);
+        this.onRemovedHelper(this, ModEffectRegistry.SUMMONED_RAVAGER);
         super.onRemovedFromLevel();
     }
 
-    private void onRemovedHelper(SummonedRavager entity, DeferredHolder<MobEffect, MobEffect> strained) {
+    private void onRemovedHelper(SummonedRavager entity, DeferredHolder<MobEffect, MobEffect> summonedRavager) {
+
     }
+
 
     @Override
     public void readAdditionalSaveData(CompoundTag compoundTag) {
@@ -112,7 +116,7 @@ public class SummonedRavager extends Ravager implements IMagicSummon {
 
     @Override
     public boolean doHurtTarget(Entity pEntity) {
-        return Utils.doMeleeAttack(this, pEntity, SpellRegistry.SUMMON_KNIGHT.get().getDamageSource(this, getSummoner()));
+        return Utils.doMeleeAttack(this, pEntity, SpellRegistry.SUMMON_RAVAGER.get().getDamageSource(this, getSummoner()));
     }
 
     @Override
@@ -140,9 +144,9 @@ public class SummonedRavager extends Ravager implements IMagicSummon {
 
                 .add(Attributes.MAX_HEALTH, 100.0D)
                 .add(Attributes.FOLLOW_RANGE, 40.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.15D)
+                .add(Attributes.MOVEMENT_SPEED, 0.1D)
                 .add(Attributes.STEP_HEIGHT, 1)
-                .add(Attributes.ATTACK_DAMAGE, 12.0D);
+                .add(Attributes.ATTACK_DAMAGE, 6.0D);
     }
 
 
@@ -152,6 +156,61 @@ public class SummonedRavager extends Ravager implements IMagicSummon {
     }
 
 
+
+    protected void doPlayerRide(Player pPlayer) {
+        if (!this.level().isClientSide) {
+            pPlayer.setYRot(25);
+            pPlayer.setXRot(this.getXRot());
+            pPlayer.startRiding(this);
+        }
+
+    }
+
+    @Nullable
+    public LivingEntity getControllingPassenger() {
+        Entity entity = this.getFirstPassenger();
+        if (entity instanceof Mob) {
+            return (Mob) entity;
+        } else {
+            entity = this.getFirstPassenger();
+            if (entity instanceof Player) {
+                return (Player) entity;
+            }
+
+            return null;
+        }
+    }
+
+    @Override
+    protected void tickRidden(Player player, Vec3 p_275242_) {
+
+        super.tickRidden(player, p_275242_);
+        this.yRotO = this.getYRot();
+        this.setYRot(player.getYRot());
+        this.setXRot(player.getXRot());
+        this.setRot(this.getYRot(), this.getXRot());
+        this.yBodyRot = this.yRotO;
+        this.yHeadRot = this.getYRot();
+    }
+
+    @Override
+    protected Vec3 getRiddenInput(Player player, Vec3 p_275300_) {
+        float f = player.xxa * 0.5F;
+        float f1 = player.zza;
+        if (f1 <= 0.0F) {
+            f1 *= 0.25F;
+        }
+        if (this.isInWater()) {
+            f *= .3f;
+            f1 *= .3f;
+        }
+        return new Vec3(f, 0.0D, f1);
+    }
+
+    @Override
+    protected float getRiddenSpeed(Player p_278336_) {
+        return (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED) * .8f;
+    }
 
 
 }

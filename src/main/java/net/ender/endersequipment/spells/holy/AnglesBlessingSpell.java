@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import io.redspace.ironsspellbooks.api.spells.AutoSpellConfig;
@@ -36,16 +37,16 @@ public class AnglesBlessingSpell extends AbstractSpell {
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.RARE)
             .setSchoolResource(SchoolRegistry.HOLY_RESOURCE)
-            .setMaxLevel(6)
-            .setCooldownSeconds(120)
+            .setMaxLevel(3)
+            .setCooldownSeconds(300)
             .build();
 
     public AnglesBlessingSpell() {
-        this.manaCostPerLevel = 100;
+        this.manaCostPerLevel = 150;
         this.baseSpellPower = 1;
         this.spellPowerPerLevel = 2;
         this.castTime = 50;
-        this.baseManaCost = 200;
+        this.baseManaCost = 500;
     }
 
     @Override
@@ -86,13 +87,14 @@ public class AnglesBlessingSpell extends AbstractSpell {
             if (targetEntity != null) {
                 targetEntity.addEffect(new MobEffectInstance(ModEffectRegistry.BLESSEDEFFECT, getDuration(spellLevel, entity), getAmplifier(spellLevel, entity)));
             }
+            entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, (int) (getSpellPower(spellLevel, entity) * 2), spellLevel + 3, false, false, true));
         }
 
         super.onCast(world, spellLevel, entity, castSource, playerMagicData);
     }
 
     public int getAmplifier(int spellLevel, LivingEntity caster) {
-        return (int) (spellLevel - 1);
+        return 1;
     }
 
     public int getDuration(int spellLevel, LivingEntity caster) {

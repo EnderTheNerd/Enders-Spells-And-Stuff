@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "endersequipment:wardingcharm"
+    "endersequipment:wardingcharm",
+    "endersequipment:shrinking_charm",
+    "endersequipment:growth_charm"
   ]
 }

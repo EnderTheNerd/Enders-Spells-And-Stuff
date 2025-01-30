@@ -91,11 +91,11 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
 
     @Override
     public void onRemovedFromLevel() {
-        this.onRemovedHelper(this, ModEffectRegistry.STRAINED);
+        this.onRemovedHelper(this, ModEffectRegistry.SUMMONED_PHANTOM);
         super.onRemovedFromLevel();
     }
 
-    private void onRemovedHelper(SummonedKnight entity, DeferredHolder<MobEffect, MobEffect> strained) {
+    private void onRemovedHelper(SummonedKnight entity, DeferredHolder<MobEffect, MobEffect> summonedPhantom) {
     }
 
 
@@ -121,7 +121,7 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
     @Override
     public void onUnSummon() {
         if (!level().isClientSide) {
-            MagicManager.spawnParticles(level(), ParticleTypes.POOF, getX(), getY(), getZ(), 25, .4, .8, .4, .03, false);
+            MagicManager.spawnParticles(level(), ParticleTypes.OMINOUS_SPAWNING, getX(), getY(), getZ(), 25, .4, .8, .4, .03, false);
             discard();
         }
     }
@@ -137,13 +137,13 @@ public class SummonedKnight extends KeeperEntity  implements IMagicSummon {
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
 
-                .add(Attributes.ATTACK_DAMAGE, 10.0)
-                .add(Attributes.MAX_HEALTH, 60.0)
-                .add(Attributes.FOLLOW_RANGE, 25.0)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.8)
+                .add(Attributes.ATTACK_DAMAGE, 15.0)
+                .add(Attributes.MAX_HEALTH, 80.0)
+                .add(Attributes.FOLLOW_RANGE, 60.0)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ATTACK_KNOCKBACK, 2.0)
                 .add(Attributes.STEP_HEIGHT, 1)
-                .add(Attributes.MOVEMENT_SPEED, .19);
+                .add(Attributes.MOVEMENT_SPEED, .3);
     }
 
 }

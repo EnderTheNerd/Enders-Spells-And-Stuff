@@ -40,21 +40,21 @@ public class RiseSpell extends AbstractSpell {
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.COMMON)
             .setSchoolResource(SchoolRegistry.LIGHTNING_RESOURCE)
-            .setMaxLevel(5)
-            .setCooldownSeconds(35)
+            .setMaxLevel(10)
+            .setCooldownSeconds(3)
             .build();
 
     public RiseSpell() {
-        this.manaCostPerLevel = 10;
+        this.manaCostPerLevel = 5;
         this.baseSpellPower = 6;
         this.spellPowerPerLevel = 1;
-        this.castTime = 40;
-        this.baseManaCost = 80;
+        this.castTime = 0;
+        this.baseManaCost = 20;
     }
 
     @Override
     public CastType getCastType() {
-        return CastType.LONG;
+        return CastType.INSTANT;
     }
 
     @Override
@@ -85,7 +85,7 @@ public class RiseSpell extends AbstractSpell {
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
         level.getEntitiesOfClass(LivingEntity.class, new AABB(entity.position().subtract(radius, radius, radius), entity.position().add(radius, radius, radius))).forEach((target) -> {
             if (Utils.shouldHealEntity(entity, target) && entity.distanceTo(target) <= radius) {
-                target.addEffect(new MobEffectInstance(MobEffectRegistry.ASCENSION, 2 * 2, (int) getSpellPower(spellLevel, entity) - 1, false, false, false));
+                target.addEffect(new MobEffectInstance(MobEffectRegistry.ASCENSION, 2, (int) getSpellPower(spellLevel, entity) - 4, false, false, false));
 
             }
         });

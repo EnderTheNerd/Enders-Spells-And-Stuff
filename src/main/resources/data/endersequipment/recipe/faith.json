@@ -1,0 +1,34 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "endersequipment:arcane_core"
+    },
+
+    "B": {
+      "item": "minecraft:netherite_ingot"
+    },
+
+    "C": {
+      "item": "minecraft:netherite_sword"
+    },
+
+    "D": {
+      "item": "irons_spellbooks:divine_pearl"
+    }
+  },
+  "pattern": [
+
+    " DD",
+    "BAD",
+    "CB "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:faith"
+  }
+}

@@ -15,7 +15,7 @@ public class chorussword extends MagicSwordItem {
 
     public chorussword() {
         super(EEItemTier.CHORUSSWORD, ItemPropertiesHelper.equipment().rarity(Rarity.EPIC).attributes(ExtendedSwordItem.createAttributes(EEItemTier.CHORUSSWORD)),
-                SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.MAGIC_MISSILE_SPELL, 11))
+                SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.MAGIC_MISSILE_SPELL, 10))
         );
     }
 }

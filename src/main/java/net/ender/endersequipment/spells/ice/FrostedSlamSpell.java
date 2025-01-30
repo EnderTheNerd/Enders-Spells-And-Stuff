@@ -86,8 +86,9 @@ public class FrostedSlamSpell extends AbstractSpell {
         for (Entity targetEntity : entities) {
             if (targetEntity.isAlive() && targetEntity.isPickable() && Utils.hasLineOfSight(level, smiteLocation.add(0, 1, 0), targetEntity.getBoundingBox().getCenter(), true)) {
                 if (DamageSources.applyDamage(targetEntity, getDamage(spellLevel, entity), damageSource));
-            }
 
+            }
+targetEntity.setTicksFrozen(400);
 
         }
         super.onCast(level, spellLevel, entity, castSource, playerMagicData);

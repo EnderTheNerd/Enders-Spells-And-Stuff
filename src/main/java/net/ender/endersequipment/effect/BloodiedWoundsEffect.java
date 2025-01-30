@@ -12,7 +12,7 @@ public class BloodiedWoundsEffect extends MagicMobEffect {
 
     }
     public boolean applyEffectTick(LivingEntity p_296279_, int p_294798_) {
-        p_296279_.hurt(p_296279_.damageSources().generic(), 7F);
+        p_296279_.hurt(p_296279_.damageSources().generic(), 5F);
         return true;
     }
 

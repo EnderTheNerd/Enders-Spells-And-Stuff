@@ -96,7 +96,7 @@ public class TentacleShieldSpell extends AbstractSpell {
 
 
     public float getDamage(int spellLevel, LivingEntity caster) {
-        return getSpellPower(spellLevel, caster);
+        return getSpellPower(spellLevel, caster)/2;
     }
 
 

@@ -3,7 +3,10 @@ package net.ender.endersequipment.item;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.ender.endersequipment.endersequipment;
+import net.ender.endersequipment.item.curios.GrowingCharm;
+import net.ender.endersequipment.item.curios.ShrinkingCharm;
 import net.ender.endersequipment.item.curios.WardingCharm;
+import net.ender.endersequipment.item.curios.WitherwardRing;
 import net.ender.endersequipment.item.swordtiers.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -90,6 +93,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> JUDGEMENT = ITEMS.register("judgement", judgement::new);
 
+    public static final DeferredItem<Item> FAITH = ITEMS.register("faith", faith::new);
+
     public static final DeferredItem<Item> COUNTERSTEEL_DAGGER = ITEMS.register("countersteel_dagger", countersteeldagger::new);
 
     public static final DeferredItem<Item> COUNTERSTEEL_SWORD = ITEMS.register("countersteel_sword", countersteelsword::new);
@@ -116,6 +121,15 @@ public class ModItems {
     public static final DeferredItem<Item> COUNTERSTEEL_GREATSWORD = ITEMS.register("countersteel_greatsword", countersteelgreatsword::new);
 
     public static final DeferredItem<CurioBaseItem> WARDINGCHARM = ITEMS.register("wardingcharm", WardingCharm::new);
+
+    public static final DeferredItem<CurioBaseItem> WITHERWARD = ITEMS.register("witherward_ring", WitherwardRing::new);
+
+    public static final DeferredItem<CurioBaseItem> GROW = ITEMS.register("growth_charm", GrowingCharm::new);
+
+    public static final DeferredItem<CurioBaseItem> SHRINK = ITEMS.register("shrinking_charm", ShrinkingCharm::new);
+
+
+
 
     public static final DeferredItem<Item> RUNIC_SWORD = ITEMS.register("runic_sword", runicblade::new);
 

@@ -24,8 +24,8 @@ public class BlizzardSpell extends AbstractSpell {
     @Override
     public List<MutableComponent> getUniqueInfo(int spellLevel, LivingEntity caster) {
         return List.of(
-                Component.translatable("ui.irons_spellbooks.effect_length", Utils.timeFromTicks(getSpellPower(spellLevel, caster) * 16, 1)),
-                Component.translatable("ui.endersequipment.armor_points", (int) getSpellPower(spellLevel, caster) + 1));
+                Component.translatable("ui.irons_spellbooks.effect_length", Utils.timeFromTicks(getSpellPower(spellLevel, caster) * 10, 1)));
+
     }
 
     private final DefaultConfig defaultConfig = new DefaultConfig()
@@ -61,7 +61,7 @@ public class BlizzardSpell extends AbstractSpell {
     @Override
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
 
-        entity.addEffect(new MobEffectInstance(ModEffectRegistry.BLIZARDARMOR, (int) (getSpellPower(spellLevel, entity) * 16), spellLevel - 1, false, false, true));
+        entity.addEffect(new MobEffectInstance(ModEffectRegistry.BLIZARDARMOR, (int) (getSpellPower(spellLevel, entity) * 10), 3, false, false, true));
 
         super.onCast(level, spellLevel, entity, castSource, playerMagicData);
     }

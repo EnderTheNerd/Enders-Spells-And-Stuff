@@ -14,14 +14,21 @@ public class EEDamageTypes {
     }
 
 
-    public static final ResourceKey<DamageType> PRIMEVAL_MAGIC = register("primeval_magic");
+    public static final ResourceKey<DamageType> EVO_MAGIC = register("evo_magic");
+    public static final ResourceKey<DamageType> SKILL_DAMAGE = register("skill_damage");
+
+
+
 
     public static void bootstrap(BootstrapContext<DamageType> context) {
-        context.register(PRIMEVAL_MAGIC, new DamageType(PRIMEVAL_MAGIC.location().getPath(), DamageScaling.WHEN_CAUSED_BY_LIVING_NON_PLAYER, 0f));
+        context.register(EVO_MAGIC, new DamageType(EVO_MAGIC.location().getPath(), DamageScaling.WHEN_CAUSED_BY_LIVING_NON_PLAYER, 0f));
+        context.register(SKILL_DAMAGE, new DamageType(SKILL_DAMAGE.location().getPath(), DamageScaling.WHEN_CAUSED_BY_LIVING_NON_PLAYER, 0f));
     }
 
-    public static final ResourceKey<DamageType> SOUL_BURN =
-            ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "soul_burn"));
+
+
+
+
 
 
 

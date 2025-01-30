@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.neoforged.bus.api.IEventBus;
@@ -23,10 +24,25 @@ public class ModEffectRegistry {
 
 
     public static final DeferredHolder<MobEffect, MobEffect> STRAINED = MOB_EFFECT_DEFERRED_REGISTER.register("strained",
-            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 780606)
-                    .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), -2,
+            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 8388627)
+                    .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), -1,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), .2,
+                    .addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), .15,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                    ));
+
+    public static final DeferredHolder<MobEffect, MobEffect> DARK_POWER = MOB_EFFECT_DEFERRED_REGISTER.register("dark_power",
+            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 8388627)
+                    .addAttributeModifier(AttributeRegistry.HOLY_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "dark_power"), -.1,
+                            AttributeModifier.Operation.ADD_VALUE)
+                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "dark_power"), .15,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                    ));
+
+
+    public static final DeferredHolder<MobEffect, MobEffect> HEARTWRENCHED = MOB_EFFECT_DEFERRED_REGISTER.register("heartwrenched",
+            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 8388627)
+                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "heartwrenched"), -.05,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE
                     ));
 
@@ -72,30 +88,47 @@ public class ModEffectRegistry {
 
 
     public static final DeferredHolder<MobEffect, MobEffect> BLESSEDEFFECT = MOB_EFFECT_DEFERRED_REGISTER.register("blessed",
-            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 93279)
-                    .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .12,
+            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 16764201)
+                    .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .3,
+                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .3,
+                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .3,
+                    .addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(AttributeRegistry.MAX_MANA, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .05,
+                    .addAttributeModifier(AttributeRegistry.MAX_MANA, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .01,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(AttributeRegistry.SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .1,
+                    .addAttributeModifier(AttributeRegistry.SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .05,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .15,
+                    .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(AttributeRegistry.CAST_TIME_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .03,
+                    .addAttributeModifier(AttributeRegistry.CAST_TIME_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .05,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(AttributeRegistry.COOLDOWN_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .02,
+                    .addAttributeModifier(AttributeRegistry.COOLDOWN_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blessed"), .01,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+
+
+
+    public static final DeferredHolder<MobEffect, MobEffect> EBONY_ARMOR = MOB_EFFECT_DEFERRED_REGISTER.register("ebony_armor",
+            EbonyArmorEffect::new
+
+    );
+
 
 
     public static final DeferredHolder<MobEffect, MobEffect> BLOODIEDWOUNDSEFFECT = MOB_EFFECT_DEFERRED_REGISTER.register("bloodied_wounds",
             () -> new BloodiedWoundsEffect(MobEffectCategory.HARMFUL, 423647));
 
+    public static final DeferredHolder<MobEffect, MobEffect> LIGHTPROTECTME = MOB_EFFECT_DEFERRED_REGISTER.register("light_protect_me",
+            () -> new LightProtectMeEffect(MobEffectCategory.BENEFICIAL, 423647));
+
+    public static final DeferredHolder<MobEffect, MobEffect> OVERCHARGED = MOB_EFFECT_DEFERRED_REGISTER.register("overcharged",
+            () -> new OverchargedEffect(MobEffectCategory.BENEFICIAL, 312312));
+
+    public static final DeferredHolder<MobEffect, MobEffect> WITHERING_TOUCH = MOB_EFFECT_DEFERRED_REGISTER.register("withering_touch",
+            () -> new WitheringTouchEffect(MobEffectCategory.BENEFICIAL, 423647));
 
     public static final DeferredHolder<MobEffect, MobEffect> STARBURNEDSOUL = MOB_EFFECT_DEFERRED_REGISTER.register("star_burned_soul",
             () -> new SoulBurnEffect(MobEffectCategory.HARMFUL, 423647));
@@ -106,6 +139,9 @@ public class ModEffectRegistry {
 
     public static final DeferredHolder<MobEffect, MobEffect> SUMMONED_RAVAGER = MOB_EFFECT_DEFERRED_REGISTER.register("summoned_ravager",
             () -> new SummonedRavagerEffect(MobEffectCategory.BENEFICIAL, 1238137));
+
+    public static final DeferredHolder<MobEffect, MobEffect> DIVINE_WRATH = MOB_EFFECT_DEFERRED_REGISTER.register("divine_wrath",
+            () -> new DivineWrathEffect(MobEffectCategory.BENEFICIAL, 1238137));
 
 
     public static final DeferredHolder<MobEffect, MobEffect> SUMMONED_PHANTOM = MOB_EFFECT_DEFERRED_REGISTER.register("summoned_phantom",
@@ -120,6 +156,14 @@ public class ModEffectRegistry {
     );
 
 
+    public static final DeferredHolder<MobEffect, MobEffect> HOLYBLESSING = MOB_EFFECT_DEFERRED_REGISTER.register("holy_blessing",
+            () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 260409)
+                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "holy_blessing"), .1,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(AttributeRegistry.SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "holy_blessing"), .05,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    );
+
     public static final DeferredHolder<MobEffect, MobEffect> OVERGROWN = MOB_EFFECT_DEFERRED_REGISTER.register("overgrown",
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 93279)
 
@@ -132,6 +176,27 @@ public class ModEffectRegistry {
                     .addAttributeModifier(AttributeRegistry.COOLDOWN_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "overgrown"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
                     .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "overgrown"), -.30,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+
+    public static final DeferredHolder<MobEffect, MobEffect> WARDENCURSE = MOB_EFFECT_DEFERRED_REGISTER.register("warden_curse",
+            () -> new MagicMobEffect(MobEffectCategory.NEUTRAL, 93279)
+
+                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .1,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(AttributeRegistry.MAX_MANA, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .02,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(AttributeRegistry.SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .15,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(AttributeRegistry.COOLDOWN_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .1,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .2,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .2,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.SCALE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .2,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "warden_curse"), .1,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 

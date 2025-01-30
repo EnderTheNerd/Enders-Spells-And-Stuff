@@ -1,0 +1,32 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:mithril_scrap"
+    },
+
+    "B": {
+      "item": "minecraft:string"
+    },
+
+    "C": {
+      "item": "minecraft:emerald"
+    }
+
+
+  },
+  "pattern": [
+
+    " B ",
+    "BAB",
+    " C "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:growth_charm"
+  }
+}

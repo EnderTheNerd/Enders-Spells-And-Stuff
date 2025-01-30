@@ -23,7 +23,7 @@ public class StrainSpell extends AbstractSpell {
     @Override
     public List<MutableComponent> getUniqueInfo(int spellLevel, LivingEntity caster) {
         return List.of(
-                Component.translatable("ui.irons_spellbooks.effect_length", Utils.timeFromTicks(getSpellPower(spellLevel, caster) * 20, 1)));
+                Component.translatable("ui.irons_spellbooks.effect_length", Utils.timeFromTicks(getSpellPower(spellLevel, caster) * 16, 1)));
 
     }
 
@@ -36,7 +36,7 @@ public class StrainSpell extends AbstractSpell {
 
     public StrainSpell() {
         this.manaCostPerLevel = 30;
-        this.baseSpellPower = 35;
+        this.baseSpellPower = 18;
         this.spellPowerPerLevel = 4;
         this.castTime = 0;
         this.baseManaCost = 50;

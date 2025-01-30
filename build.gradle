@@ -13,7 +13,34 @@ tasks.named('wrapper', Wrapper).configure {
     // (Verify by checking gradle/wrapper/gradle-wrapper.properties to see if distributionUrl now points to `-all`)
     distributionType = Wrapper.DistributionType.BIN
 }
+repositories {
+    flatDir {
+        dir 'libs'
+    }
 
+    maven {
+        name = "Iron's Maven - Release"
+        url = "https://code.redspace.io/releases"
+    }
+
+    maven {
+        name = "Iron's Maven - Snapshots"
+        url = "https://code.redspace.io/snapshots"
+    }
+
+    maven { url = "https://maven.enginehub.org/repo/" }
+    maven {
+        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+    maven { url = "https://maven.theillusivec4.top" }
+    maven { url = "https://cursemaven.com" }
+    maven { url = "https://maven.blamejared.com" }
+    maven { url = "https://maven.kosmx.dev/" }
+
+}
 version = mod_version
 group = mod_group_id
 
@@ -113,47 +140,62 @@ configurations {
     runtimeClasspath.extendsFrom localRuntime
 }
 
-dependencies
+dependencies {
+    // ISS ***************************************************************************************************
+    implementation "io.redspace:irons_spellbooks:1.21-3.8.4"
 
-    repositories {
-        flatDir {
-            dir 'libs'
-        }
+    // GECKOLIB ***************************************************************************************************
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
 
-        maven { url = "https://maven.enginehub.org/repo/" }
-        maven {
-            url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
-            content {
-                includeGroup("software.bernie.geckolib")
-            }
-        }
-        maven { url = "https://maven.theillusivec4.top" }
-        maven { url = "https://cursemaven.com" }
-        maven { url = "https://maven.blamejared.com" }
-        maven { url = "https://maven.kosmx.dev/" }
-        maven { url = "https://code.redspace.io/releases" }
-    }
+    // CAELUS *****************************************************************************************************
+    compileOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}:api"
+    localRuntime "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
 
-/// ...
+    // PLAYER ANIMATOR ********************************************************************************************
+    //compileOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    //jarJar(group: "dev.kosmx.player-anim", name: "player-animation-lib-forge", version: "[${player_animator_version},${player_animator_version}]")
 
-    dependencies {
-        implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
-        compileOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}:api"
-        localRuntime "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
 
-        implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
-        compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"
-        compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
-        runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
-        implementation "curse.maven:adorned-1036809:5546365"
-        compileOnly "vazkii.patchouli:Patchouli:${patchouli_version}-NEOFORGE"
-        implementation "com.google.code.gson:gson:${gson_version}"
 
-        // ISS *****************************************************************************************************
-        implementation("io.redspace:irons_spellbooks:${irons_spells_version}")
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    }
+    // If you want to run with tetra in dev comment the above line and uncomment the following 2 lines
+    //localRuntime "curse.maven:tetra-${tetra_version}"
+    //localRuntime "se.mickelus.mutil:mutil:${mutil_version}"
+    localRuntime "curse.maven:better-combat-by-daedelus-639842:5723092"
+    localRuntime "curse.maven:cloth-config-348521:5623420"
 
+    // JEI ********************************************************************************************************
+    compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
+    //localRuntime "curse.maven:just-enough-effect-descriptions-jeed-532286:4599099")
+    // CURIOS *****************************************************************************************************
+    //todo: 1.21: find correct maven for new curios
+    implementation "curse.maven:adorned-1036809:5546365"
+    //implementation "curse.maven:curios-continuation-1037991:5546342"
+    //compileOnly "top.theillusivec4.curios:curios-forge:8.0.1+1.20.6:api"
+
+    // BETTER COMBAT **********************************************************************************************
+    //localRuntime "curse.maven:better-combat-by-daedelus-${better_combat_version}"
+    //localRuntime "curse.maven:cloth-config-348521:4633416"
+
+    // PATCHOULI **************************************************************************************************
+    //compileOnly "vazkii.patchouli:Patchouli:${patchouli_version}:api"
+    //localRuntime "vazkii.patchouli:Patchouli:${patchouli_version}"
+
+
+
+
+
+    // Spell Collector Lib
+    implementation "curse.maven:spell-collector-lib-1149858:5972600"
+
+
+
+    // JSON ******************************************************************************************************
+    implementation "com.google.code.gson:gson:${gson_version}"
+
+}
 
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.

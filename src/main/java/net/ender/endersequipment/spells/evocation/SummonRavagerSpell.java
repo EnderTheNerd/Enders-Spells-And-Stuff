@@ -39,7 +39,7 @@ public class SummonRavagerSpell extends AbstractSpell {
             .setMinRarity(SpellRarity.EPIC)
             .setSchoolResource(SchoolRegistry.EVOCATION_RESOURCE)
             .setMaxLevel(10)
-            .setCooldownSeconds(180)
+            .setCooldownSeconds(280)
             .build();
 
     public SummonRavagerSpell() {
@@ -72,7 +72,7 @@ public class SummonRavagerSpell extends AbstractSpell {
 
     @Override
     public void onCast(Level world, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
-        int summonTime = 20 * 60 * 10;
+        int summonTime = 100;
 
         SummonedRavager ravager = new SummonedRavager(world, entity);
         ravager.setPos(entity.position());

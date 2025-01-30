@@ -5,7 +5,7 @@
   "key": {
 
     "A": {
-      "item": "irons_spellbooks:upgrade_orb"
+      "item": "irons_spellbooks:mana_upgrade_orb"
     },
 
     "B": {
@@ -18,12 +18,16 @@
 
     "D": {
       "item": "irons_spellbooks:mithril_ingot"
+    },
+
+    "E": {
+      "item": "irons_spellbooks:arcane_rune"
     }
   },
   "pattern": [
 
-    "CBC",
-    "DAD",
+    "DBD",
+    "EAE",
     "CBC"
 
   ],

@@ -24,6 +24,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -60,9 +61,16 @@ public class SupernovaSpell extends AbstractSpell {
         this.baseManaCost = 500;
     }
 
+
+
     @Override
     public CastType getCastType() {
         return CastType.LONG;
+    }
+
+    @Override
+    public boolean canBeInterrupted(@Nullable Player player) {
+        return false;
     }
 
     @Override

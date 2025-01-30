@@ -37,14 +37,14 @@ public class EESchoolRegistry extends SchoolRegistry {
 
 
 
-    public static final Supplier<SchoolType> PRIMEVAL = (Supplier<SchoolType>) registerSchool(new SchoolType(
+    public static final Supplier<SchoolType> EVO_SKILLS = (Supplier<SchoolType>) registerSchool(new SchoolType(
             PRIMEVAL_RESOURCE,
             EETags.PRIMEVAL_FOCUS,
-            Component.translatable("school.endersequipment.primeval").withStyle(ChatFormatting.RED),
-            EEAttributeRegistry.PRIMEVAL_MAGIC_SPELL_POWER,
-            EEAttributeRegistry.PRIMEVAL_MAGIC_RESIST,
-            SoundRegistry.KEEPER_IDLE,
-            EEDamageTypes.PRIMEVAL_MAGIC
+            Component.translatable("school.endersequipment.primeval").withStyle(ChatFormatting.DARK_AQUA),
+            EEAttributeRegistry.EVO_MAGIC_SPELL_POWER,
+            EEAttributeRegistry.EVO_MAGIC_RESIST,
+            SoundRegistry.EQUIP_SPELL_BOOK,
+            EEDamageTypes.EVO_MAGIC
     ));
 
     @Nullable
@@ -57,6 +57,22 @@ public class EESchoolRegistry extends SchoolRegistry {
         }
         return null;
     }
+
+
+    public static final ResourceLocation SKILL_RESOURCE = ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "skill");
+
+    public static final Supplier<SchoolType> SKILLS = (Supplier<SchoolType>) registerSchool(new SchoolType(
+            SKILL_RESOURCE,
+            EETags.PRIMEVAL_FOCUS,
+            Component.translatable("school.endersequipment.skills").withStyle(ChatFormatting.GOLD),
+            EEAttributeRegistry.SKILL_SPELL_POWER,
+            EEAttributeRegistry.SKILL_MAGIC_RESIST,
+            SoundRegistry.KEEPER_SWORD_IMPACT,
+            EEDamageTypes.SKILL_DAMAGE
+    ));
+
+
+
 }
 
 

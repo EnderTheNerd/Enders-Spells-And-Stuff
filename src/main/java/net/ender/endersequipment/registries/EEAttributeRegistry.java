@@ -25,11 +25,13 @@ public class EEAttributeRegistry {
         ATTRIBUTES.register(eventBus);
     }
 
+    public static final DeferredHolder<Attribute, Attribute> SKILL_SPELL_POWER = newPowerAttribute("skill");
 
+    public static final DeferredHolder<Attribute, Attribute> SKILL_MAGIC_RESIST = newResistanceAttribute("skill");
 
-    public static final DeferredHolder<Attribute, Attribute> PRIMEVAL_MAGIC_SPELL_POWER = newPowerAttribute("primeval");
+    public static final DeferredHolder<Attribute, Attribute> EVO_MAGIC_SPELL_POWER = newPowerAttribute("evo");
 
-    public static final DeferredHolder<Attribute, Attribute> PRIMEVAL_MAGIC_RESIST = newResistanceAttribute("primeval");
+    public static final DeferredHolder<Attribute, Attribute> EVO_MAGIC_RESIST = newResistanceAttribute("evo");
 
 
     @SubscribeEvent
