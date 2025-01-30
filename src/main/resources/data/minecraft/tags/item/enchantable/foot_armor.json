@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-    "endersequipment:countersteel_boots"
+    "endersequipment:countersteel_boots",
+    "endersequipment:aristocrat_boots"
 
   ]
 }

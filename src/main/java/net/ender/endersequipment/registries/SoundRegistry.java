@@ -10,16 +10,27 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class SoundRegistry {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(Registries.SOUND_EVENT, endersequipment.MOD_ID);
+    private static final DeferredRegister<SoundEvent> SOUND_EVENT = DeferredRegister.create(Registries.SOUND_EVENT, endersequipment.MOD_ID);
 
 
-    public static void register(IEventBus eventBus) {
-        SOUND_EVENTS.register(eventBus);
+
+    // Anubis Spell Cast
+    public static DeferredHolder<SoundEvent, SoundEvent> ANUBIS_SPELL_CAST = registerSoundEvent("anubis_cast");
+
+    private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name)
+    {
+        return SOUND_EVENT.register(name, () -> SoundEvent.createVariableRangeEvent
+                (ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, name)));
     }
 
-    public static DeferredHolder<SoundEvent, SoundEvent> SNOWGRAVE = registerSoundEvent("snowgrave_sound");
-
-    private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name) {
-        return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, name)));
+    public static void register(IEventBus eventBus)
+    {
+        SOUND_EVENT.register(eventBus);
     }
+
+
+
+
+
+
 }

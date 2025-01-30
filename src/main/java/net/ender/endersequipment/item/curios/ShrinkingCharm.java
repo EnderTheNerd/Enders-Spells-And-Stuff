@@ -23,7 +23,7 @@ public class ShrinkingCharm extends SimpleDescriptiveCurio {
     @Override
     public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id, ItemStack stack) {
         Multimap<Holder<Attribute>, AttributeModifier> attr = LinkedHashMultimap.create();
-        attr.put(Attributes.SCALE, new AttributeModifier(id, -0.6, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+        attr.put(Attributes.SCALE, new AttributeModifier(id, -0.3, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
         return attr;
     }

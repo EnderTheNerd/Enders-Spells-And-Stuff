@@ -5,10 +5,13 @@ import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 
 import io.redspace.ironsspellbooks.api.spells.AutoSpellConfig;
 import net.ender.endersequipment.endersequipment;
+import net.ender.endersequipment.spells.blade.*;
 import net.ender.endersequipment.spells.blood.*;
 
 
+import net.ender.endersequipment.spells.blood.divine.TheDivinityOfAnubisSpell;
 import net.ender.endersequipment.spells.blood.uncraftable.DarkSacrificeSpell;
+import net.ender.endersequipment.spells.blood.uncraftable.LordOfDecaySpell;
 import net.ender.endersequipment.spells.eldritch.EbonyArmorSpell;
 import net.ender.endersequipment.spells.eldritch.MadnessWaveSpell;
 import net.ender.endersequipment.spells.eldritch.TentacleShieldSpell;
@@ -17,18 +20,20 @@ import net.ender.endersequipment.spells.evocation.*;
 import net.ender.endersequipment.spells.evocation.uncraftable.TrickerySpell;
 import net.ender.endersequipment.spells.fire.CombustionSpell;
 import net.ender.endersequipment.spells.fire.EruptionSpell;
-import net.ender.endersequipment.spells.fire.EverblazeSpell;
 import net.ender.endersequipment.spells.fire.uncraftable.SearingSlamSpell;
+
 import net.ender.endersequipment.spells.holy.AnglesBlessingSpell;
 import net.ender.endersequipment.spells.holy.SacredSlashSpell;
 import net.ender.endersequipment.spells.holy.uncraftable.SanctuarySpell;
-import net.ender.endersequipment.spells.ice.BlizzardSpell;
+import net.ender.endersequipment.spells.ice.FrostArmorSpell;
 import net.ender.endersequipment.spells.ice.SnowgraveSpell;
 import net.ender.endersequipment.spells.ice.uncraftable.BelowZeroSpell;
 import net.ender.endersequipment.spells.lightning.RiseSpell;
 import net.ender.endersequipment.spells.ice.FrostedSlamSpell;
 
 import net.ender.endersequipment.spells.lightning.uncraftable.OverchargedSpell;
+import net.ender.endersequipment.spells.nature.PetalBurstSpell;
+import net.ender.endersequipment.spells.nature.PetalDanceSpell;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -53,7 +58,7 @@ public class SpellRegistry {
         public static final Supplier<AbstractSpell> ANGELSBLESSING =registerSpell(new AnglesBlessingSpell());
         public static final Supplier<AbstractSpell> BLOODWAVE =registerSpell(new BloodWaveSpell());
         public static final Supplier<AbstractSpell> BOILING_BLOOD =registerSpell(new BoilingBloodSpell());
-        public static final Supplier<AbstractSpell> BLIZZARD_ARMOR =registerSpell(new BlizzardSpell());
+        public static final Supplier<AbstractSpell> BLIZZARD_ARMOR =registerSpell(new FrostArmorSpell());
         public static final Supplier<AbstractSpell> SLASH =registerSpell(new SlashSpell());
         public static final Supplier<AbstractSpell> ERUPTION =registerSpell(new EruptionSpell());
         public static final Supplier<AbstractSpell> WHIP =registerSpell(new TentacleShieldSpell());
@@ -73,6 +78,17 @@ public class SpellRegistry {
         public static final Supplier <AbstractSpell> TRICKERY =registerSpell(new TrickerySpell());
         public static final Supplier <AbstractSpell> MADNESS_WAVE =registerSpell(new MadnessWaveSpell());
         public static final Supplier <AbstractSpell> ARROW_SPRAY =registerSpell(new ArrowSpraySpell());
+        public static final Supplier <AbstractSpell> PETAL_BLIZZARD =registerSpell(new PetalBurstSpell());
+        public static final Supplier <AbstractSpell> SLAM = registerSpell(new SlamSpell());
+        public static final Supplier <AbstractSpell> FLURRY = registerSpell(new FlurrySpell());
+        public static final Supplier <AbstractSpell> HONE_EDGE = registerSpell(new HoneEdgeSpell());
+        public static final Supplier <AbstractSpell> SWORD_STANCE =registerSpell(new SwordStanceSpell());
+        public static final Supplier <AbstractSpell> OVERWHELMING_FORCE =registerSpell(new OverwhelmingForceSpell());
+        public static final Supplier <AbstractSpell> QUICK_SLICE =  registerSpell(new QuickSliceSpell());
+        public static final Supplier <AbstractSpell> FINAL_BREATH =registerSpell (new FinalBreathSpell());
+        public static final Supplier <AbstractSpell> LORD =registerSpell(new LordOfDecaySpell());
+        public static final  Supplier <AbstractSpell> ANUBIS =registerSpell(new TheDivinityOfAnubisSpell());
+
 
         public static void register(IEventBus eventBus)
         {

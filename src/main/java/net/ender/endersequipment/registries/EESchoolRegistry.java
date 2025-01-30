@@ -3,6 +3,7 @@ package net.ender.endersequipment.registries;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.SchoolType;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
+import net.ender.endersequipment.damage.ESSDamageTypes;
 import net.ender.endersequipment.endersequipment;
 import net.ender.endersequipment.util.EETags;
 import net.minecraft.ChatFormatting;
@@ -37,15 +38,6 @@ public class EESchoolRegistry extends SchoolRegistry {
 
 
 
-    public static final Supplier<SchoolType> EVO_SKILLS = (Supplier<SchoolType>) registerSchool(new SchoolType(
-            PRIMEVAL_RESOURCE,
-            EETags.PRIMEVAL_FOCUS,
-            Component.translatable("school.endersequipment.primeval").withStyle(ChatFormatting.DARK_AQUA),
-            EEAttributeRegistry.EVO_MAGIC_SPELL_POWER,
-            EEAttributeRegistry.EVO_MAGIC_RESIST,
-            SoundRegistry.EQUIP_SPELL_BOOK,
-            EEDamageTypes.EVO_MAGIC
-    ));
 
     @Nullable
     public static SchoolType getSchoolFromFocus(ItemStack focusStack) {
@@ -59,18 +51,19 @@ public class EESchoolRegistry extends SchoolRegistry {
     }
 
 
-    public static final ResourceLocation SKILL_RESOURCE = ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "skill");
+
+
+    public static final ResourceLocation BLADE_RESOURCE = ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blade");
 
     public static final Supplier<SchoolType> SKILLS = (Supplier<SchoolType>) registerSchool(new SchoolType(
-            SKILL_RESOURCE,
-            EETags.PRIMEVAL_FOCUS,
-            Component.translatable("school.endersequipment.skills").withStyle(ChatFormatting.GOLD),
-            EEAttributeRegistry.SKILL_SPELL_POWER,
-            EEAttributeRegistry.SKILL_MAGIC_RESIST,
+            BLADE_RESOURCE,
+            EETags.BLADE_FOCUS,
+            Component.translatable("school.endersequipment.blade").withStyle(ChatFormatting.RED),
+            EEAttributeRegistry.BLADE_SPELL_POWER,
+            EEAttributeRegistry.BLADE_MAGIC_RESIST,
             SoundRegistry.KEEPER_SWORD_IMPACT,
-            EEDamageTypes.SKILL_DAMAGE
+            ESSDamageTypes.SPELLBLADE_MAGIC
     ));
-
 
 
 }

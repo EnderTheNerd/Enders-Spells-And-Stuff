@@ -5,7 +5,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -35,7 +37,7 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.UNSTABLE_SCRAP);
 
-                         output.accept(ModItems.CHORUSSWORD);
+                         output.accept(ModItems.CHORUSSWORD);;
 
                          output.accept(ModItems.PETRIFIED_OAK);
 
@@ -108,6 +110,32 @@ public class ModCreativeModeTabs {
                          output.accept(ModItems.GROW);
 
                          output.accept(ModItems.SHRINK);
+
+                         output.accept(ModItems.DISPELLIUM);
+
+                         output.accept(ModItems.DISPELLIUM_HELMET);
+
+                         output.accept(ModItems.DISPELLIUM_CHESTPLATE);
+
+                         output.accept(ModItems.DISPELLIUM_LEGGINGS);
+
+                         output.accept(ModItems.DISPELLIUM_BOOTS);
+
+                         output.accept(ModItems.FIRE_CLAYMORE);
+
+                         output.accept((ItemLike) ModItems.ARISTOCRAT_HELMET);
+
+                         output.accept((ItemLike) ModItems.ARISTOCRAT_CHESTPLATE);
+
+                         output.accept((ItemLike) ModItems.ARISTOCRAT_LEGGINGS);
+
+                         output.accept((ItemLike) ModItems.ARISTOCRAT_BOOTS);
+
+                         output.accept((ItemLike) ModItems.SPELLBLADE_RUNE);
+
+                         output.accept((ItemLike) ModItems.SPELLBLADE_UPGRADE_ORB);
+
+                         output.accept((ItemLike) ModItems.COMBAT_MANUAL);
 
 
 

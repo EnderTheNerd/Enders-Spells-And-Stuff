@@ -108,7 +108,13 @@ public class EverblazeSpell extends AbstractSpell {
 
             Vec3 smiteLocation = Utils.raycastForBlock(level, entity.getEyePosition(), entity.getEyePosition().add(entity.getForward().multiply(range, 0, range)), ClipContext.Fluid.NONE).getLocation();
             playerMagicData.getPlayerRecasts().addRecast(new RecastInstance(getSpellId(), spellLevel, getRecastCount(spellLevel, entity), 80, castSource, null), playerMagicData);
+
+
+
             var entities = level.getEntities(entity, AABB.ofSize(smiteLocation, radius * 2, radius * 4, radius * 2));
+
+
+
             Vec3 particleLocation = level.clip(new ClipContext(smiteLocation, smiteLocation.add(0, -2, 0), ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, CollisionContext.empty())).getLocation().add(0, 0.1, 0);
             MagicManager.spawnParticles(level, ParticleTypes.FLAME, particleLocation.x, particleLocation.y, particleLocation.z, 80, 20, 10, 0, 1, false);
             MagicManager.spawnParticles(level, ParticleHelper.FIERY_SPARKS, particleLocation.x, particleLocation.y, particleLocation.z, 80, 0, 10, 0, .5, false);

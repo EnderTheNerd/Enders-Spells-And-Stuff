@@ -1,4 +1,4 @@
-package net.ender.endersequipment.spells.evo;
+package net.ender.endersequipment.spells.blade;
 
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
@@ -7,22 +7,19 @@ import io.redspace.ironsspellbooks.api.spells.*;
 import io.redspace.ironsspellbooks.api.util.AnimationHolder;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.damage.DamageSources;
-import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import net.ender.endersequipment.endersequipment;
 import net.ender.endersequipment.registries.EESchoolRegistry;
-import net.ender.endersequipment.registries.ModEffectRegistry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -34,8 +31,8 @@ import java.util.List;
 import java.util.Optional;
 
 @AutoSpellConfig
-public class WeakSlam extends AbstractSpell {
-    private final ResourceLocation spellId = ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "slam");
+public class SlashSpell extends AbstractSpell {
+    private final ResourceLocation spellId = ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "slash");
 
     @Override
     public List<MutableComponent> getUniqueInfo(int spellLevel, LivingEntity caster) {
@@ -44,27 +41,27 @@ public class WeakSlam extends AbstractSpell {
 
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.COMMON)
-            .setSchoolResource(EESchoolRegistry.PRIMEVAL_RESOURCE)
-            .setMaxLevel(1)
-            .setCooldownSeconds(25)
+            .setSchoolResource(EESchoolRegistry.BLADE_RESOURCE)
+            .setMaxLevel(8)
+            .setCooldownSeconds(10)
             .build();
 
-    public WeakSlam() {
-        this.manaCostPerLevel = 0;
-        this.baseSpellPower = 4;
-        this.spellPowerPerLevel = 2;
+    public SlashSpell() {
+        this.manaCostPerLevel = 5;
+        this.baseSpellPower = 5;
+        this.spellPowerPerLevel = 1;
         this.castTime = 10;
-        this.baseManaCost = 45;
+        this.baseManaCost = 50;
     }
 
     @Override
     public Optional<SoundEvent> getCastStartSound() {
-        return Optional.of(SoundEvents.ANVIL_FALL);
+        return Optional.of(SoundRegistry.DEAD_KING_SLAM.get());
     }
 
     @Override
     public Optional<SoundEvent> getCastFinishSound() {
-        return Optional.of(SoundEvents.ANVIL_BREAK);
+        return Optional.of(SoundRegistry.DEAD_KING_SWING.get());
     }
 
     @Override
@@ -107,7 +104,6 @@ public class WeakSlam extends AbstractSpell {
                 if (offsetVector.dot(forward) >= 0) {
                     if (DamageSources.applyDamage(targetEntity, getDamage(spellLevel, entity), damageSource)) {
                         EnchantmentHelper.doPostAttackEffects((ServerLevel) level, targetEntity, damageSource);
-                        ((LivingEntity) targetEntity).addEffect((new MobEffectInstance(MobEffectRegistry.AIRBORNE, (int) (getSpellPower(spellLevel, entity) * 2), spellLevel, false, false, false)));
                     }
                 }
             }
@@ -115,20 +111,21 @@ public class WeakSlam extends AbstractSpell {
     }
 
     private float getDamage(int spellLevel, LivingEntity entity) {
-        return getSpellPower(spellLevel, entity) + getAdditionalDamage(entity);
+        return getSpellPower(spellLevel, entity) + getWeaponDamage(entity);
     }
 
-    private float getAdditionalDamage(LivingEntity entity) {
+    private float getWeaponDamage(LivingEntity entity) {
         if (entity == null) {
             return 0;
         }
         float weaponDamage = Utils.getWeaponDamage(entity);
         var weaponItem = entity.getWeaponItem();
         if (!weaponItem.isEmpty() && weaponItem.has(DataComponents.ENCHANTMENTS)) {
-            weaponDamage += Utils.getEnchantmentLevel(entity.level(), Enchantments.BREACH, weaponItem.get(DataComponents.ENCHANTMENTS));
+            weaponDamage += Utils.processEnchantment(entity.level(), Enchantments.SHARPNESS, EnchantmentEffectComponents.DAMAGE, weaponItem.get(DataComponents.ENCHANTMENTS));
         }
         return weaponDamage;
     }
+
 
     private String getDamageText(int spellLevel, LivingEntity entity) {
         if (entity != null) {
@@ -145,7 +142,7 @@ public class WeakSlam extends AbstractSpell {
 
     @Override
     public AnimationHolder getCastStartAnimation() {
-        return SpellAnimations.OVERHEAD_MELEE_SWING_ANIMATION;
+        return SpellAnimations.ONE_HANDED_HORIZONTAL_SWING_ANIMATION;
     }
 
     @Override

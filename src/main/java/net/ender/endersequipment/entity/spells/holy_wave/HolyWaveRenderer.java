@@ -18,6 +18,7 @@ import org.joml.Matrix4f;
 import java.util.Random;
 
 public class HolyWaveRenderer extends EntityRenderer<HolyWaveProjectile> {
+
     private static final ResourceLocation[] TEXTURES = {
             ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "textures/entity/spells/holy_wave1.png")
     };

@@ -1,5 +1,6 @@
 package net.ender.endersequipment.item;
 
+import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
@@ -9,6 +10,7 @@ import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -33,6 +35,12 @@ public class EEItemTier implements Tier, IronsWeaponTier {
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.UNSTABLE_SCRAP),
             new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+    public static ExtendedWeaponTier FIRE_CLAYMORE = new ExtendedWeaponTier(2300, 8f, -2f, 30,
+            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
+            () -> Ingredient.of(ModItems.UNSTABLE_SCRAP),
+            new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
 
 
     public static ExtendedWeaponTier GROVEKEEPER = new ExtendedWeaponTier(1800, 6f, -2.6f, 30,
@@ -89,25 +97,26 @@ public class EEItemTier implements Tier, IronsWeaponTier {
     public static ExtendedWeaponTier COUNTERSTEEL_GREATSWORD = new ExtendedWeaponTier(2300, 9f, -2.9f, 30,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(ModItems.COUNTERSTEEL),
-            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.SPELL_POWER, -.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(ALObjects.Attributes.PROT_PIERCE, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+        );
 
     public static ExtendedWeaponTier COUNTERSTEEL_DAGGER = new ExtendedWeaponTier(2000, 4f, -1.7f, 30,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(ModItems.COUNTERSTEEL),
-            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.SPELL_POWER, -.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(ALObjects.Attributes.ARMOR_PIERCE, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+            );
 
     public static ExtendedWeaponTier FAITH = new ExtendedWeaponTier(2000, 11f, -3f, 22,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(Items.NETHERITE_INGOT),
-            new AttributeContainer(AttributeRegistry.HOLY_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.HOLY_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+    new AttributeContainer(AttributeRegistry.MANA_REGEN, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static ExtendedWeaponTier COUNTERSTEEL_SWORD = new ExtendedWeaponTier(2200, 7f, -2.2f, 30,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(ModItems.COUNTERSTEEL),
-            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.SPELL_POWER, -.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(Attributes.ATTACK_DAMAGE, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+          );
 
     public static ExtendedWeaponTier BROKEN_PROMISE = new ExtendedWeaponTier(1000, 12f, -3.1f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
@@ -118,13 +127,13 @@ public class EEItemTier implements Tier, IronsWeaponTier {
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.ROTTEN_BONE),
             new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.SUMMON_DAMAGE, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
     public static ExtendedWeaponTier HEARTBEAT = new ExtendedWeaponTier(2000, 12f, -3.1f, 20,
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.TRANSMUTED_STICK),
-            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+    new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
 
@@ -134,6 +143,15 @@ public class EEItemTier implements Tier, IronsWeaponTier {
             new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.08, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.MANA_REGEN, 0.08, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
             );
+
+
+
+
+
+
+
+
+
 
 
     int uses;

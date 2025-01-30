@@ -56,6 +56,8 @@ public class endersequipment {
 
         EntityRegistry.register(modEventBus);
 
+        SoundRegistry.register(modEventBus);
+
 
         NeoForge.EVENT_BUS.register(this);
         // Register the item to a creative tab

@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "endersequipment:countersteel_chestplate"
-
+    "endersequipment:countersteel_chestplate",
+    "endersequipment:aristocrat_chestplate"
   ]
 }

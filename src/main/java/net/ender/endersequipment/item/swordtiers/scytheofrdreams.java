@@ -12,7 +12,8 @@ public class scytheofrdreams  extends MagicSwordItem {
 
     public scytheofrdreams() {
         super(EEItemTier.SCYTHE_OF_R_DREAMS, ItemPropertiesHelper.equipment().rarity(Rarity.EPIC).attributes(ExtendedSwordItem.createAttributes(EEItemTier.SCYTHE_OF_R_DREAMS)),
-                SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.RAISE_DEAD_SPELL, 8))
+                SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.RAISE_DEAD_SPELL, 8),
+                        new SpellDataRegistryHolder(net.ender.endersequipment.registries.SpellRegistry.LORD, 1))
         );
     }
 }

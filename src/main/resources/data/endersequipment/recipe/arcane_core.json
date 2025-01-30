@@ -5,7 +5,7 @@
   "key": {
 
     "A": {
-      "item": "irons_spellbooks:mana_upgrade_orb"
+      "item": "irons_spellbooks:upgrade_orb"
     },
 
     "B": {
@@ -27,8 +27,8 @@
   "pattern": [
 
     "DBD",
-    "EAE",
-    "CBC"
+    "CAC",
+    "EEE"
 
   ],
   "result": {

@@ -1,0 +1,27 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "B": {
+      "item": "endersequipment:spellblade_rune"
+    },
+
+    "A": {
+      "item": "irons_spellbooks:magic_cloth"
+    }
+
+  },
+  "pattern": [
+
+    "AAA",
+    "ABA",
+    "   "
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:aristocrat_helmet"
+  }
+}

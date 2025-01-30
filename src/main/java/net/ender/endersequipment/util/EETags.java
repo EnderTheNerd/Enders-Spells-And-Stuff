@@ -8,6 +8,6 @@ import net.minecraft.world.item.Item;
 
 public class EETags {
 
-        public static final TagKey<Item> PRIMEVAL_FOCUS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "primeval_focus"));
+        public static final TagKey<Item> BLADE_FOCUS = ItemTags.create(ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blade_focus"));
 
 }

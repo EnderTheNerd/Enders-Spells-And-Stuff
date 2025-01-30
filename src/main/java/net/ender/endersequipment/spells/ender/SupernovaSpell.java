@@ -1,5 +1,8 @@
 package net.ender.endersequipment.spells.ender;
 
+import com.gametechbc.spelllib.particle.CylinderParticleManager;
+import com.gametechbc.spelllib.particle.ParticleDirection;
+import com.gametechbc.spelllib.particle.SphereParticleManager;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
@@ -12,6 +15,9 @@ import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.damage.SpellDamageSource;
 import io.redspace.ironsspellbooks.particle.BlastwaveParticleOptions;
+import io.redspace.ironsspellbooks.particle.ShockwaveParticleOptions;
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
+import io.redspace.ironsspellbooks.registries.ParticleRegistry;
 import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.ender.endersequipment.registries.ModEffectRegistry;
@@ -93,45 +99,69 @@ public class SupernovaSpell extends AbstractSpell {
         return Optional.of(SoundRegistry.DEAD_KING_DEATH.get());
     }
 
+    public void onServerCastTick(Level level, int spellLevel, LivingEntity entity, @Nullable MagicData playerMagicData) {
+        float radius = this.getRange(spellLevel);
+        CylinderParticleManager.spawnParticles(level, entity, 30 * spellLevel, ParticleTypes.DRAGON_BREATH, ParticleDirection.INWARD, (double)radius, (double)(4 * spellLevel), -1.0D);
+
+        SphereParticleManager.spawnParticles(level, entity, 40, ParticleRegistry.UNSTABLE_ENDER_PARTICLE.get(), ParticleDirection.INWARD, 8.0D);
+
+
+        super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+    }
+
+
     @Override
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
         float radius = 16f;
         float range = 16f;
         Vector3f edge = new Vector3f(.7f, 1f, 1f);
         Vector3f center = new Vector3f(1, 1f, 1f);
+
         Vec3 smiteLocation = Utils.raycastForBlock(level, entity.getEyePosition(), entity.getEyePosition().add(entity.getForward().multiply(range, 0, range)), ClipContext.Fluid.NONE).getLocation();
+
         Vec3 particleLocation = level.clip(new ClipContext(smiteLocation, smiteLocation.add(0, -2, 0), ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, CollisionContext.empty())).getLocation().add(0, 0.1, 0);
-        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ELDRITCH.get().getTargetingColor(), radius * 2),
-                particleLocation.x, particleLocation.y, particleLocation.z, 1, 0, 0, 0, 0, true);
-         Utils.raycastForBlock(level, entity.getEyePosition(), entity.getEyePosition().add(entity.getForward().multiply(range, 0, range)), ClipContext.Fluid.NONE).getLocation();
-        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ENDER.get().getTargetingColor(), radius * 6),
-                particleLocation.x, particleLocation.y, particleLocation.z, 1, 0, 0, 0, 0, true);
-         Utils.raycastForBlock(level, entity.getEyePosition(), entity.getEyePosition().add(entity.getForward().multiply(range, 0, range)), ClipContext.Fluid.NONE).getLocation();
-        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ENDER.get().getTargetingColor(), radius * 2),
-                particleLocation.x, particleLocation.y, particleLocation.z, 1, 0, 0, 0, 0, true);
-       Utils.raycastForBlock(level, entity.getEyePosition(), entity.getEyePosition().add(entity.getForward().multiply(range, 0, range)), ClipContext.Fluid.NONE).getLocation();
-        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ELDRITCH.get().getTargetingColor(), radius * 4),
-                particleLocation.x, particleLocation.y, particleLocation.z, 1, 0, 0, 0, 0, true);
-        MagicManager.spawnParticles(level, ParticleHelper.VOID_TENTACLE_FOG, entity.getX(), entity.getY() + 1, entity.getZ(), 80, .25, .25, .25, 0.7f + radius * 8f, false);
-        MagicManager.spawnParticles(level, ParticleHelper.VOID_TENTACLE_FOG, entity.getX(), entity.getY() + 1, entity.getZ(), 80, .25, .25, .25, 0.7f + radius * 8f, false);
-        MagicManager.spawnParticles(level, ParticleHelper.VOID_TENTACLE_FOG, entity.getX(), entity.getY() + 1, entity.getZ(), 80, .25, .25, .25, 0.7f + radius * 8f, false);
-        MagicManager.spawnParticles(level, ParticleHelper.FOG_THUNDER_DARK, entity.getX(), entity.getY() + 1, entity.getZ(), 80, .25, .25, .25, 0.7f + radius * .1f, false);
-        MagicManager.spawnParticles(level, ParticleTypes.DUST_PLUME, particleLocation.x, particleLocation.y, particleLocation.z, 50, 0, 0, 0, 1, false);
-        MagicManager.spawnParticles(level, ParticleTypes.TOTEM_OF_UNDYING, particleLocation.x, particleLocation.y, particleLocation.z, 50, 0, 0, 0, 1, false);
-        CameraShakeManager.addCameraShake(new CameraShakeData(50, particleLocation, 10));
+
+
+        SphereParticleManager.spawnParticles(level, entity, 80, ParticleHelper.UNSTABLE_ENDER, ParticleDirection.OUTWARD, 8.0D);
+        super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+        SphereParticleManager.spawnParticles(level, entity, 80, ParticleHelper.UNSTABLE_ENDER, ParticleDirection.INWARD, 16.0D);
+        super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+        SphereParticleManager.spawnParticles(level, entity, 150, ParticleTypes.END_ROD, ParticleDirection.UPWARD, 10.0D);
+        super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+        SphereParticleManager.spawnParticles(level, entity, 150, ParticleTypes.DRAGON_BREATH, ParticleDirection.UPWARD, 10.0D);
+        super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+
+        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ENDER.get().getTargetingColor(), radius * 3), entity.getX(), entity.getY() + .165f, entity.getZ(), 1, 0, 0, 0, 1, true);
+        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ENDER.get().getTargetingColor(), radius * 3), entity.getX(), entity.getY() + .165f, entity.getZ(), 1, 0, 0, 0, 1, true);
+        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ELDRITCH.get().getTargetingColor(), radius * 3), entity.getX(), entity.getY() + .165f, entity.getZ(), 1, 0, 0, 0, 0, true);
+        MagicManager.spawnParticles(level, new BlastwaveParticleOptions(SchoolRegistry.ELDRITCH.get().getTargetingColor(), radius * 3), entity.getX(), entity.getY() + .165f, entity.getZ(), 1, 0, 0, 0, 0, true);
+
+
+        MagicManager.spawnParticles(level, new ShockwaveParticleOptions(((SchoolType)SchoolRegistry.ENDER.get()).getTargetingColor(), -3.0F, true), entity.getX(), entity.getY(), entity.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D, true);
+        super.onServerPreCast(level, spellLevel, entity, playerMagicData);
+
         var entities = level.getEntities(entity, AABB.ofSize(smiteLocation, radius * 2, radius * 4, radius * 2));
         var damageSource = this.getDamageSource(entity);
         for (Entity targetEntity : entities) {
             if (targetEntity.isAlive() && targetEntity.isPickable() && Utils.hasLineOfSight(level, smiteLocation.add(0, 1, 0), targetEntity.getBoundingBox().getCenter(), true)) {
                 if (DamageSources.applyDamage(targetEntity, getDamage(spellLevel, entity), damageSource));
-                entity.addEffect(new MobEffectInstance(ModEffectRegistry.STARBURNEDSOUL, (int) (getSpellPower(spellLevel, entity) * 39), spellLevel + 20, false, false, true));
+
             }
 
+            CylinderParticleManager.spawnParticles(level, entity, 100 * spellLevel, ParticleHelper.PORTAL_FRAME, ParticleDirection.UPWARD, (double)radius, (double)(4 * spellLevel), -1.0D);
+
+            CylinderParticleManager.spawnParticles(level, entity, 100, ParticleHelper.ELECTRIC_SPARKS, ParticleDirection.INWARD, 15.0D, 10.0D, 2.0D);
+            super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+            CylinderParticleManager.spawnParticles(level, entity, 100, ParticleHelper.FIERY_SPARKS, ParticleDirection.INWARD, 15.0D, 10.0D, 2.0D);
+            super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+            CylinderParticleManager.spawnParticles(level, entity, 70, ParticleHelper.VOID_TENTACLE_FOG, ParticleDirection.OUTWARD, 15.0D, 10.0D, 3.0D);
+            super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+            CylinderParticleManager.spawnParticles(level, entity, 70, ParticleHelper.COMET_FOG, ParticleDirection.INWARD, 15.0D, 10.0D, 4.0D);
+            super.onServerCastTick(level, spellLevel, entity, playerMagicData);
+        }
+        entity.addEffect(new MobEffectInstance(ModEffectRegistry.STARBURNEDSOUL, 10000, 25));
             super.onCast(level, spellLevel, entity, castSource, playerMagicData);
         }
-
-    }
-
     @Override
     public SpellDamageSource getDamageSource(@Nullable Entity projectile, Entity attacker) {
         return super.getDamageSource(projectile, attacker).setFreezeTicks(60);
@@ -145,6 +175,10 @@ public class SupernovaSpell extends AbstractSpell {
 
     }
 
+    private float getRange(int spellLevel) {
+        return 8;
+    }
+
     @Override
     public AnimationHolder getCastStartAnimation () {
         return SpellAnimations.CAST_KNEELING_PRAYER;
@@ -154,4 +188,6 @@ public class SupernovaSpell extends AbstractSpell {
     public AnimationHolder getCastFinishAnimation () {
         return SpellAnimations.CAST_T_POSE;
     }
-}
+    }
+
+

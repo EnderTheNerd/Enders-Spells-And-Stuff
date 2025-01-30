@@ -24,6 +24,8 @@ public class EbonyArmorEffect extends MobEffect {
              .2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
      this.addAttributeModifier(Attributes.ARMOR_TOUGHNESS, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "ebony_armor"), .05,
              AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
+     this.addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "ebony_armor"), -100,
+             AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
      this.addAttributeModifier(Attributes.KNOCKBACK_RESISTANCE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "ebony_armor"), .04,
                      AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
      this.addAttributeModifier(AttributeRegistry.SPELL_RESIST, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "ebony_armor"), .05,

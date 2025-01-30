@@ -142,10 +142,19 @@ configurations {
 
 dependencies {
     // ISS ***************************************************************************************************
-    implementation "io.redspace:irons_spellbooks:1.21-3.8.4"
+    implementation "curse.maven:irons-spells-n-spellbooks-855414:6117735"
+
+    //NEAT
+    implementation "curse.maven:neat-238372:5838045"
+
+    implementation "curse.maven:mmmmmmmmmmmm-225738:6237115"
+
+    implementation "curse.maven:selene-499980:6224057"
+
+    implementation "curse.maven:apothic-attributes-898963:6148951"
 
     // GECKOLIB ***************************************************************************************************
-    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+    implementation "curse.maven:geckolib-388172:6027599"
 
     // CAELUS *****************************************************************************************************
     compileOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}:api"
@@ -156,7 +165,11 @@ dependencies {
     implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
     //jarJar(group: "dev.kosmx.player-anim", name: "player-animation-lib-forge", version: "[${player_animator_version},${player_animator_version}]")
 
+    //PLACEBO
+    implementation "curse.maven:placebo-283644:6105436"
 
+    //BIG MAN GAMETECH
+    implementation "curse.maven:gtbcs-spelllib-1194714:6164512"
 
     // If you want to run with tetra in dev comment the above line and uncomment the following 2 lines
     //localRuntime "curse.maven:tetra-${tetra_version}"

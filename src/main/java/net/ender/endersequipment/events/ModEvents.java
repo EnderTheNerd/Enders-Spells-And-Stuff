@@ -1,12 +1,21 @@
 package net.ender.endersequipment.events;
+import ca.weblite.objc.Message;
 import io.redspace.ironsspellbooks.api.events.CounterSpellEvent;
 import io.redspace.ironsspellbooks.api.events.SpellPreCastEvent;
+import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
+import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
+import io.redspace.ironsspellbooks.entity.mobs.IMagicSummon;
+import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
+import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
+import io.redspace.ironsspellbooks.util.ParticleHelper;
+import net.ender.endersequipment.item.ModItems;
 import net.ender.endersequipment.registries.ModEffectRegistry;
 import net.ender.endersequipment.item.swordtiers.bloodthirst;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerPlayer;
@@ -15,14 +24,23 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.event.entity.living.LivingChangeTargetEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import static net.minecraft.tags.EntityTypeTags.UNDEAD;
 
 @EventBusSubscriber
 public class ModEvents {
@@ -45,6 +63,58 @@ public class ModEvents {
 
 
     }
+
+
+
+    @SubscribeEvent
+    public static void onLivingDeath(LivingDeathEvent event) {
+        if (event.getEntity() instanceof IMagicSummon) {
+            IMagicSummon summon = (IMagicSummon) event.getEntity();
+            if (summon.getSummoner() != null && summon.getSummoner() instanceof ServerPlayer) {
+                ServerPlayer summoner = (ServerPlayer) summon.getSummoner();
+                MagicData magicData = MagicData.getPlayerMagicData(summoner);
+                if (summoner.hasEffect(ModEffectRegistry.LORD_OF_DECAY) && magicData.getMana() > 50) {
+                    magicData.setMana(magicData.getMana() - 50);
+
+
+                    summoner.displayClientMessage(Component.literal(ChatFormatting.ITALIC + "Revived Summon")
+                            .withStyle(s -> s.withColor(TextColor.fromRgb(3289650))), true);
+                    event.setCanceled(true);
+                    event.getEntity().setHealth(event.getEntity().getMaxHealth());
+                    if (event.getSource().getEntity() instanceof LivingEntity) {
+
+                    }
+                }
+            }
+        }
+    }
+
+
+    @SubscribeEvent
+    public static void onLivingDeath2(LivingDeathEvent event) {
+        if (event.getEntity() instanceof IMagicSummon) {
+            IMagicSummon summon = (IMagicSummon) event.getEntity();
+            if (summon.getSummoner() != null && summon.getSummoner() instanceof ServerPlayer) {
+                ServerPlayer summoner = (ServerPlayer) summon.getSummoner();
+                MagicData magicData = MagicData.getPlayerMagicData(summoner);
+                if (summoner.hasEffect(ModEffectRegistry.ANUBIS_DIVINITY) && magicData.getMana() > 0) {
+
+
+
+                    summoner.displayClientMessage(Component.literal(ChatFormatting.GOLD + "Loyal Minion Returned from Death")
+                            .withStyle(s -> s.withColor(TextColor.fromRgb(3289650))), true);
+                    event.setCanceled(true);
+                    event.getEntity().addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 150, 1));
+                    event.getEntity().setHealth(event.getEntity().getMaxHealth());
+                    if (event.getSource().getEntity() instanceof LivingEntity) {
+
+                    }
+                }
+            }
+        }
+    }
+
+
 
     @SubscribeEvent
     public static void onPlayerCastEvent(SpellPreCastEvent event) {
@@ -150,6 +220,7 @@ public class ModEvents {
 
     }
 
+
     @SubscribeEvent
     public static void livingDamageEvent2(LivingDamageEvent.Post event) {
         var sourceEntity = event.getSource().getEntity();
@@ -158,7 +229,6 @@ public class ModEvents {
         var attacked = event.getEntity();
         var projectile = event.getSource().getDirectEntity();
 
-        // Diary of Decay
         if (sourceEntity != null) {
             if (sourceEntity instanceof Player player) {
 
@@ -173,7 +243,25 @@ public class ModEvents {
         }
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,45 @@
+{
+
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+
+    "A": {
+      "item": "irons_spellbooks:rotten_spell_book"
+    },
+
+    "B": {
+      "item": "minecraft:cherry_leaves"
+    },
+
+    "C": {
+      "item": "minecraft:shield"
+    },
+
+    "D": {
+      "item": "minecraft:netherite_sword"
+    },
+
+    "E": {
+      "item": "minecraft:trident"
+    },
+
+
+    "F": {
+      "item": "minecraft:diamond_axe"
+    }
+
+
+  },
+  "pattern": [
+
+    "CBE",
+    "BAB",
+    "DBF"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "endersequipment:combat_manual"
+  }
+}

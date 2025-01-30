@@ -27,7 +27,7 @@ public class ModEffectRegistry {
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 8388627)
                     .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), -1,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), .15,
+                    .addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), .05,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE
                     ));
 
@@ -38,6 +38,7 @@ public class ModEffectRegistry {
                     .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "dark_power"), .15,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE
                     ));
+
 
 
     public static final DeferredHolder<MobEffect, MobEffect> HEARTWRENCHED = MOB_EFFECT_DEFERRED_REGISTER.register("heartwrenched",
@@ -116,7 +117,20 @@ public class ModEffectRegistry {
 
     );
 
+    public static final DeferredHolder<MobEffect, MobEffect> ANUBIS_DIVINITY = MOB_EFFECT_DEFERRED_REGISTER.register("anubis_divinity",
+            AnubisDivinityEffect::new
 
+    );
+
+    public static final DeferredHolder<MobEffect, MobEffect> PETAL_DANCER = MOB_EFFECT_DEFERRED_REGISTER.register("petal_dancer",
+            PetalDancerEffect::new
+
+    );
+
+    public static final DeferredHolder<MobEffect, MobEffect> LORD_OF_DECAY = MOB_EFFECT_DEFERRED_REGISTER.register("lord_of_decay",
+            LordOfDecayEffect::new
+
+    );
 
     public static final DeferredHolder<MobEffect, MobEffect> BLOODIEDWOUNDSEFFECT = MOB_EFFECT_DEFERRED_REGISTER.register("bloodied_wounds",
             () -> new BloodiedWoundsEffect(MobEffectCategory.HARMFUL, 423647));
@@ -131,7 +145,7 @@ public class ModEffectRegistry {
             () -> new WitheringTouchEffect(MobEffectCategory.BENEFICIAL, 423647));
 
     public static final DeferredHolder<MobEffect, MobEffect> STARBURNEDSOUL = MOB_EFFECT_DEFERRED_REGISTER.register("star_burned_soul",
-            () -> new SoulBurnEffect(MobEffectCategory.HARMFUL, 423647));
+            () -> new SoulBurnEffect(MobEffectCategory.NEUTRAL, 423647));
 
 
     public static final DeferredHolder<MobEffect, MobEffect> SOUL_STOP = MOB_EFFECT_DEFERRED_REGISTER.register("soul_stop",

@@ -10,12 +10,15 @@ import io.redspace.ironsspellbooks.registries.SoundRegistry;
 import net.ender.endersequipment.endersequipment;
 import net.ender.endersequipment.entity.spells.holy_wave.HolyWaveProjectile;
 import net.ender.endersequipment.registries.ModEffectRegistry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
@@ -94,12 +97,18 @@ public class SacredSlashSpell extends AbstractSpell {
         return (float) ((getSpellPower(spellLevel, caster) * 0.6) + getWeaponDamage(caster));
     }
 
-    private float getWeaponDamage(LivingEntity caster)
-    {
-        float weaponDamage = Utils.getWeaponDamage(caster);
-
+    private float getWeaponDamage(LivingEntity entity) {
+        if (entity == null) {
+            return 0;
+        }
+        float weaponDamage = Utils.getWeaponDamage(entity);
+        var weaponItem = entity.getWeaponItem();
+        if (!weaponItem.isEmpty() && weaponItem.has(DataComponents.ENCHANTMENTS)) {
+            weaponDamage += Utils.processEnchantment(entity.level(), Enchantments.SMITE, EnchantmentEffectComponents.DAMAGE, weaponItem.get(DataComponents.ENCHANTMENTS));
+        }
         return weaponDamage;
     }
+
 
     private String getDamageText(int spellLevel, LivingEntity caster)
     {

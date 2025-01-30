@@ -36,7 +36,7 @@ public class HeartwrenchSpell extends AbstractSpell {
     @Override
     public List<MutableComponent> getUniqueInfo(int spellLevel, LivingEntity caster) {
         return List.of(
-                Component.translatable("ui.irons_spellbooks.effect_length", Utils.timeFromTicks(getSpellPower(spellLevel, caster) * 8, 1)),
+                Component.translatable("ui.irons_spellbooks.effect_length", Utils.timeFromTicks(getSpellPower(spellLevel, caster) * 10, 1)),
                 Component.translatable("ui.irons_spellbooks.damage", Utils.stringTruncation(getDamage(spellLevel, caster), 2)));
 
     }
@@ -107,13 +107,13 @@ public class HeartwrenchSpell extends AbstractSpell {
                         p = 1 - p * p * p;
 
                         DamageSources.applyDamage(targetEntity, damage * p, getDamageSource(targetEntity, entity));
-                        targetEntity.addEffect(new MobEffectInstance(ModEffectRegistry.HEARTWRENCHED, (int) (getSpellPower(spellLevel, entity) * 39), spellLevel + 20, false, false, true));
+                        targetEntity.addEffect(new MobEffectInstance(ModEffectRegistry.HEARTWRENCHED, (int) (getSpellPower(spellLevel, entity) * 10), 1, false, false, true));
                     }
                 level.getEntities(entity, entity.getBoundingBox().inflate(radius, 4, radius), (target) -> !DamageSources.isFriendlyFireBetween(target, entity) && Utils.hasLineOfSight(level, entity, target, true)).forEach(target -> {
                             {
                                 if (target instanceof LivingEntity livingEntity && livingEntity.distanceToSqr(entity) < radius * radius) {
-                                    int i = getDuration(baseSpellPower, entity);
-                                    livingEntity.addEffect(new MobEffectInstance(ModEffectRegistry.HEARTWRENCHED, i, getWrenchAmplifier(spellLevel, entity)));
+                                    int i = getDuration(baseSpellPower, entity)/2;
+                                    livingEntity.addEffect(new MobEffectInstance(ModEffectRegistry.HEARTWRENCHED, i, 1));
 
                                     MagicManager.spawnParticles(level, ParticleHelper.BLOOD_GROUND, livingEntity.getX(), livingEntity.getY() + livingEntity.getBbHeight() * .5f, livingEntity.getZ(), 50, livingEntity.getBbWidth() * .5f, livingEntity.getBbHeight() * .5f, livingEntity.getBbWidth() * .5f, .03, false);
                                 }

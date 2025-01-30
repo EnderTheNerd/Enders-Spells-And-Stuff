@@ -1,5 +1,7 @@
 package net.ender.endersequipment.spells.ice;
 
+import com.gametechbc.spelllib.particle.CylinderParticleManager;
+import com.gametechbc.spelllib.particle.ParticleDirection;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
@@ -126,6 +128,9 @@ public class SnowgraveSpell extends AbstractSpell {
         MagicManager.spawnParticles(level, ParticleHelper.SNOWFLAKE, particleLocation.x, particleLocation.y, particleLocation.z, 50, 0, 0, 0, 1, false);
         MagicManager.spawnParticles(level, ParticleHelper.ICY_FOG, entity.getX(), entity.getY() + 1, entity.getZ(), 80, .45, .45, .45, 0.6f + radius * .4f, false);
         CameraShakeManager.addCameraShake(new CameraShakeData(10, particleLocation, 10));
+
+        CylinderParticleManager.spawnParticles(level, entity, 70, ParticleTypes.SNOWFLAKE, ParticleDirection.OUTWARD, 6.0D, 10.0D, 3.0D);
+        super.onServerCastTick(level, spellLevel, entity, playerMagicData);
 
         var entities = level.getEntities(entity, AABB.ofSize(smiteLocation, radius * 2, radius * 4, radius * 2));
         var damageSource = this.getDamageSource(entity);

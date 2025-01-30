@@ -41,7 +41,7 @@ public class ArrowSpraySpell extends AbstractSpell {
     public ArrowSpraySpell() {
         this.manaCostPerLevel = 20;
         this.baseSpellPower = 8;
-        this.spellPowerPerLevel = 2;
+        this.spellPowerPerLevel = 4;
         this.castTime = 0;
         this.baseManaCost = 45;
     }
