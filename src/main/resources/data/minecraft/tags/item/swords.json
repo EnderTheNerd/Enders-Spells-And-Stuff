@@ -1,26 +1,22 @@
 {
-  "replace": false,
   "values": [
     "endersequipment:bloodthirst",
-    "endersequipment:overchargedcore",
-    "endersequipment:mithril_sword",
-    "endersequipment:chorussword",
-    "endersequipment:the_dark",
-    "endersequipment:the_light",
-    "endersequipment:molten",
-    "endersequipment:spectral_blade",
-    "endersequipment:hailstorm",
-    "endersequipment:countersteel_greatsword",
-    "endersequipment:countersteel_dagger",
-    "endersequipment:countersteel_sword",
     "endersequipment:broken_promise",
+    "endersequipment:chorussword",
+    "endersequipment:countersteel_dagger",
+    "endersequipment:countersteel_greatsword",
+    "endersequipment:countersteel_sword",
+    "endersequipment:faith",
+    "endersequipment:fire_claymore",
+    "endersequipment:hailstorm",
     "endersequipment:heartbeat",
-    "endersequipment:scythe_of_rotted_dreams",
+    "endersequipment:mithril_sword",
+    "endersequipment:molten",
+    "endersequipment:overchargedcore",
     "endersequipment:runic_sword",
-    "endersequipment:faith"
-
-
-
-
+    "endersequipment:spectral_blade",
+    "endersequipment:scythe_of_rotted_dreams",
+    "endersequipment:the_dark",
+    "endersequipment:the_light"
   ]
 }
