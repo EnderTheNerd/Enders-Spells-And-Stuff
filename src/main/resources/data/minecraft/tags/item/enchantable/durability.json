@@ -1,15 +1,6 @@
 {
-  "replace": false,
   "values": [
-    "endersequipment:countersteel_helmet",
-    "endersequipment:countersteel_chestplate",
-    "endersequipment:countersteel_leggings",
-    "endersequipment:countersteel_boots",
-    "endersequipment:aristocrat_helmet",
-    "endersequipment:aristocrat_chestplate",
-    "endersequipment:aristocrat_leggings",
-    "endersequipment:aristocrat_boots"
-
-
+    "#minecraft:enchantable/armor",
+    "#minecraft:enchantable/mace"
   ]
 }
