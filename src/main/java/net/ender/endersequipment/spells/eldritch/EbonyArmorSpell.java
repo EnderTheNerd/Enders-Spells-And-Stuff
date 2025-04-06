@@ -74,8 +74,8 @@ public class EbonyArmorSpell extends AbstractSpell {
     @Override
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
 
-        entity.addEffect(new MobEffectInstance(ModEffectRegistry.EBONY_ARMOR, (int) (getSpellPower(spellLevel, entity) * 16), spellLevel - 1, false, false, true));
-        entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) (getSpellPower(spellLevel, entity) * 16), spellLevel - 1, false, false, false));
+        entity.addEffect(new MobEffectInstance(ModEffectRegistry.EBONY_ARMOR, (int) (getSpellPower(spellLevel, entity) * 16), spellLevel - 2, false, false, true));
+        entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) (getSpellPower(spellLevel, entity) * 16), spellLevel - 2, false, false, false));
 
         super.onCast(level, spellLevel, entity, castSource, playerMagicData);
     }

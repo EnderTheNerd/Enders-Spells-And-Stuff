@@ -5,5 +5,49 @@
   "sounds": [
     "endersequipment:anubis_cast"
   ]
-}
+},
+
+  "judgement_cast": {
+    "subtitle": "sounds.endersequipment.judgement_cast",
+    "sounds": [
+      "endersequipment:judgement_cast"
+    ]
+    },
+
+
+  "anubis_divinity_rasp":
+  {
+    "subtitle": "sounds.endersequipment.anubis_divinity_rasp",
+    "sounds": [
+      "endersequipment:anubis_divinity_rasp"
+    ]
+  },
+
+  "pale_flame_start":
+  {
+    "subtitle": "sounds.endersequipment.pale_flame_start",
+    "sounds":
+    [
+      "endersequipment:pale_flame_start"
+    ]
+  },
+
+  "pale_flame_end":
+  {
+    "subtitle": "sounds.endersequipment.pale_flame_end",
+    "sounds":
+    [
+      "endersequipment:pale_flame_end"
+    ]
+  },
+
+  "pale_flame_curse":
+  {
+    "subtitle": "sounds.endersequipment.cursed_player",
+    "sounds": [
+      "endersequipment:cursed"
+    ]
+  }
+
+
 }

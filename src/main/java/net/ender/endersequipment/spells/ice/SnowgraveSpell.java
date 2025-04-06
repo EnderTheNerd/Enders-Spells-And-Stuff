@@ -64,8 +64,8 @@ public class SnowgraveSpell extends AbstractSpell {
 
     public SnowgraveSpell() {
         this.manaCostPerLevel = 20;
-        this.baseSpellPower = 10;
-        this.spellPowerPerLevel = 4;
+        this.baseSpellPower = 8;
+        this.spellPowerPerLevel = 3;
         this.castTime = 24;
         this.baseManaCost = 250;
     }

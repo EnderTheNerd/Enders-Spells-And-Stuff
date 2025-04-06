@@ -31,7 +31,7 @@ public class FrostArmorSpell extends AbstractSpell {
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.EPIC)
             .setSchoolResource(SchoolRegistry.ICE_RESOURCE)
-            .setMaxLevel(8)
+            .setMaxLevel(5)
             .setCooldownSeconds(200)
             .build();
 
@@ -61,7 +61,7 @@ public class FrostArmorSpell extends AbstractSpell {
     @Override
     public void onCast(Level level, int spellLevel, LivingEntity entity, CastSource castSource, MagicData playerMagicData) {
 
-        entity.addEffect(new MobEffectInstance(ModEffectRegistry.BLIZARDARMOR, (int) (getSpellPower(spellLevel, entity) * 10), 3, false, false, true));
+        entity.addEffect(new MobEffectInstance(ModEffectRegistry.BLIZARDARMOR, (int) (getSpellPower(spellLevel, entity) * 10), 0, false, false, true));
 
         super.onCast(level, spellLevel, entity, castSource, playerMagicData);
     }

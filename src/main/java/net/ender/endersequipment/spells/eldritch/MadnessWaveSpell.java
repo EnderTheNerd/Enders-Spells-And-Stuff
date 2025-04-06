@@ -140,7 +140,7 @@ public class MadnessWaveSpell extends AbstractSpell {
 
 }
     private float getDamage(int spellLevel, LivingEntity entity) {
-        return getSpellPower(spellLevel, entity) + getAdditionalDamage(entity)/2;
+        return getSpellPower(spellLevel, entity) + getAdditionalDamage(entity)/3;
     }
 
     private float getAdditionalDamage(LivingEntity entity) {

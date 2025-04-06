@@ -6,16 +6,14 @@ import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.item.UpgradeOrbItem;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.ender.endersequipment.endersequipment;
 import net.ender.endersequipment.item.armor.AristocratArmorItem;
-import net.ender.endersequipment.item.curios.GrowingCharm;
-import net.ender.endersequipment.item.curios.ShrinkingCharm;
-import net.ender.endersequipment.item.curios.WardingCharm;
-import net.ender.endersequipment.item.curios.WitherwardRing;
-import net.ender.endersequipment.item.custom.EEUpgradeTier;
+import net.ender.endersequipment.item.curios.*;
 import net.ender.endersequipment.item.swordtiers.*;
 import net.ender.endersequipment.registries.EEAttributeRegistry;
+import net.ender.endersequipment.registries.EEUpgradeOrbRegistry;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -57,7 +55,8 @@ public class ModItems {
     public static final DeferredItem<Item> SPELLBLADE_RUNE = ITEMS.register("spellblade_rune",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredHolder<Item, Item> SPELLBLADE_UPGRADE_ORB = ITEMS.register("spellblade_upgrade_orb", () -> new UpgradeOrbItem(EEUpgradeTier.SPELLBLADE_SPELL_POWER, ItemPropertiesHelper.material().rarity(Rarity.UNCOMMON)));
+    public static final DeferredHolder<Item, Item> SPELLBLADE_UPGRADE_ORB = ITEMS.register("spellblade_upgrade_orb",
+            () -> new UpgradeOrbItem(ItemPropertiesHelper.material().rarity(Rarity.UNCOMMON).component(ComponentRegistry.UPGRADE_ORB_TYPE, EEUpgradeOrbRegistry.SPELLBLADE_SPELL_POWER)));
 
     public static final DeferredItem<Item> SPECTRAL_ESSENCE = ITEMS.register("spectral_essence",
             () -> new Item(new Item.Properties()));
@@ -163,6 +162,8 @@ public class ModItems {
     public static final DeferredItem<CurioBaseItem> GROW = ITEMS.register("growth_charm", GrowingCharm::new);
 
     public static final DeferredItem<CurioBaseItem> SHRINK = ITEMS.register("shrinking_charm", ShrinkingCharm::new);
+
+    public static final DeferredItem<CurioBaseItem> ANUBIS_TOKEN = ITEMS.register("anubis_token", AnubisToken::new);
 
 
 

@@ -9,6 +9,10 @@ import net.ender.endersequipment.entity.spells.holy_wave.HolyWaveProjectile;
 
 import net.ender.endersequipment.entity.spells.madness_wave.MadnessWave;
 import net.ender.endersequipment.entity.spells.overhwhelming.OverwhelmingStrike;
+import net.ender.endersequipment.entity.spells.pale_flame.PaleFlame;
+import net.ender.endersequipment.entity.spells.pale_flame.PaleFlame40;
+import net.ender.endersequipment.entity.spells.pale_flame.PaleFlame60;
+import net.ender.endersequipment.entity.spells.pale_flame.PaleFlame80;
 import net.ender.endersequipment.entity.summoned_knight.SummonedKnight;
 import net.ender.endersequipment.entity.summoned_ravager.SummonedRavager;
 import net.minecraft.core.registries.Registries;
@@ -83,6 +87,31 @@ public class EntityRegistry {
                     .sized(5f, 1f)
                     .clientTrackingRange(64)
                     .build( ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "mad_wave").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<PaleFlame>> PALE_FLAME =
+            ENTITIES.register("pale_flame", () -> EntityType.Builder.<PaleFlame>of(PaleFlame::new, MobCategory.MISC)
+                    .sized(5f, 1f)
+                    .clientTrackingRange(64)
+                    .build( ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "pale_flame").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<PaleFlame80>> PALE_FLAME_80 =
+            ENTITIES.register("pale_flame_80", () -> EntityType.Builder.<PaleFlame80>of(PaleFlame80::new, MobCategory.MISC)
+                    .sized(6f, 1f)
+                    .clientTrackingRange(64)
+                    .build( ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "pale_flame_80").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<PaleFlame60>> PALE_FLAME_60 =
+            ENTITIES.register("pale_flame_60", () -> EntityType.Builder.<PaleFlame60>of(PaleFlame60::new, MobCategory.MISC)
+                    .sized(7f, 1f)
+                    .clientTrackingRange(64)
+                    .build( ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "pale_flame_80").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<PaleFlame40>> PALE_FLAME_40 =
+            ENTITIES.register("pale_flame_40", () -> EntityType.Builder.<PaleFlame40>of(PaleFlame40::new, MobCategory.MISC)
+                    .sized(10f, 1f)
+                    .clientTrackingRange(64)
+                    .build( ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "pale_flame_40").toString()));
+
 
 
     public static final DeferredHolder<EntityType<?>, EntityType<OverwhelmingStrike>> OVERWHELMING_STRIKE=

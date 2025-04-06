@@ -46,7 +46,7 @@ public class SacredSlashSpell extends AbstractSpell {
     public SacredSlashSpell()
     {
         this.manaCostPerLevel = 22;
-        this.baseSpellPower = 14;
+        this.baseSpellPower = 10;
         this.spellPowerPerLevel = 5;
         this.castTime = 0;
         this.baseManaCost = 100;

@@ -61,6 +61,7 @@ public class LordOfDecaySpell extends AbstractSpell {
         return false;
     }
 
+
     private final DefaultConfig defaultConfig = new DefaultConfig()
             .setMinRarity(SpellRarity.LEGENDARY)
             .setSchoolResource(SchoolRegistry.BLOOD_RESOURCE)

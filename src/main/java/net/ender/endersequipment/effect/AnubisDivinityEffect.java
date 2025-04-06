@@ -20,9 +20,9 @@ public class AnubisDivinityEffect extends MobEffect{
     public AnubisDivinityEffect() {
         super(MobEffectCategory.BENEFICIAL, 8030132);
         this.addAttributeModifier(AttributeRegistry.SUMMON_DAMAGE, ResourceLocation.parse("8c58bcd9-516f-4cfb-b372-a811d08b3da3"),
-                .4, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
+                .2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
         this.addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.parse("8c58bcd9-516f-4cfb-b372-a811d08b3da3"),
-                .5, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
+                .25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
         this.addAttributeModifier(AttributeRegistry.HOLY_SPELL_POWER, ResourceLocation.parse("8c58bcd9-516f-4cfb-b372-a811d08b3da3"),
                 -1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
         this.addAttributeModifier(AttributeRegistry.FIRE_SPELL_POWER, ResourceLocation.parse("8c58bcd9-516f-4cfb-b372-a811d08b3da3"),

@@ -4,11 +4,13 @@ package net.ender.endersequipment.registries;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 
 import io.redspace.ironsspellbooks.api.spells.AutoSpellConfig;
+import net.ender.endersequipment.effect.SoulLockEffect;
 import net.ender.endersequipment.endersequipment;
 import net.ender.endersequipment.spells.blade.*;
 import net.ender.endersequipment.spells.blood.*;
 
 
+import net.ender.endersequipment.spells.blood.divine.JudgementScaleSpell;
 import net.ender.endersequipment.spells.blood.divine.TheDivinityOfAnubisSpell;
 import net.ender.endersequipment.spells.blood.uncraftable.DarkSacrificeSpell;
 import net.ender.endersequipment.spells.blood.uncraftable.LordOfDecaySpell;
@@ -20,10 +22,14 @@ import net.ender.endersequipment.spells.evocation.*;
 import net.ender.endersequipment.spells.evocation.uncraftable.TrickerySpell;
 import net.ender.endersequipment.spells.fire.CombustionSpell;
 import net.ender.endersequipment.spells.fire.EruptionSpell;
+import net.ender.endersequipment.spells.fire.PaleFlameSpell;
 import net.ender.endersequipment.spells.fire.uncraftable.SearingSlamSpell;
 
 import net.ender.endersequipment.spells.holy.AnglesBlessingSpell;
 import net.ender.endersequipment.spells.holy.SacredSlashSpell;
+
+import net.ender.endersequipment.spells.holy.SolarStormSpell;
+import net.ender.endersequipment.spells.holy.uncraftable.FieldOfEverlastingLifeSpell;
 import net.ender.endersequipment.spells.holy.uncraftable.SanctuarySpell;
 import net.ender.endersequipment.spells.ice.FrostArmorSpell;
 import net.ender.endersequipment.spells.ice.SnowgraveSpell;
@@ -39,6 +45,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.checkerframework.checker.units.qual.A;
 
+import javax.print.attribute.standard.Sides;
 import java.util.function.Supplier;
 
 @AutoSpellConfig
@@ -88,6 +95,11 @@ public class SpellRegistry {
         public static final Supplier <AbstractSpell> FINAL_BREATH =registerSpell (new FinalBreathSpell());
         public static final Supplier <AbstractSpell> LORD =registerSpell(new LordOfDecaySpell());
         public static final  Supplier <AbstractSpell> ANUBIS =registerSpell(new TheDivinityOfAnubisSpell());
+        public static final Supplier <AbstractSpell> JUDGEMENT_SCALE =registerSpell(new JudgementScaleSpell());
+        public static final Supplier <AbstractSpell> FIELD_OF_LIFE =registerSpell(new FieldOfEverlastingLifeSpell());
+        public static final Supplier <AbstractSpell> PALE_FLAME =registerSpell(new PaleFlameSpell());
+
+
 
 
         public static void register(IEventBus eventBus)

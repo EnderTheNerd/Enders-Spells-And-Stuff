@@ -17,6 +17,20 @@ public class SoundRegistry {
     // Anubis Spell Cast
     public static DeferredHolder<SoundEvent, SoundEvent> ANUBIS_SPELL_CAST = registerSoundEvent("anubis_cast");
 
+    //Judgement Scale Cast
+    public static DeferredHolder<SoundEvent, SoundEvent> JUDGEMENT_SPELL_CAST =registerSoundEvent("judgement_cast");
+
+
+    //Anubis Divinity Spell End
+    public static DeferredHolder<SoundEvent, SoundEvent> ANUBIS_DIVINITY_SPELL_END =registerSoundEvent("anubis_divinity_rasp");
+
+    //PALE FLAME
+    public static DeferredHolder<SoundEvent, SoundEvent> PALE_FLAME_START =registerSoundEvent("pale_flame_start");
+
+    public static DeferredHolder<SoundEvent, SoundEvent> PALE_FLAME_END =registerSoundEvent("pale_flame_end");
+
+    public static DeferredHolder<SoundEvent, SoundEvent> PALE_FLAME_CURSE =registerSoundEvent("cursed");
+
     private static DeferredHolder<SoundEvent, SoundEvent> registerSoundEvent(String name)
     {
         return SOUND_EVENT.register(name, () -> SoundEvent.createVariableRangeEvent

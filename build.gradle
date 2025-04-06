@@ -142,10 +142,14 @@ configurations {
 
 dependencies {
     // ISS ***************************************************************************************************
-    implementation "curse.maven:irons-spells-n-spellbooks-855414:6117735"
+    implementation "curse.maven:irons-spells-n-spellbooks-855414:6308743"
 
     //NEAT
     implementation "curse.maven:neat-238372:5838045"
+
+
+// SPELL COLLECTOR LIB
+    implementation "curse.maven:spell-collector-lib-1149858:6174572"
 
     implementation "curse.maven:mmmmmmmmmmmm-225738:6237115"
 
@@ -174,8 +178,6 @@ dependencies {
     // If you want to run with tetra in dev comment the above line and uncomment the following 2 lines
     //localRuntime "curse.maven:tetra-${tetra_version}"
     //localRuntime "se.mickelus.mutil:mutil:${mutil_version}"
-    localRuntime "curse.maven:better-combat-by-daedelus-639842:5723092"
-    localRuntime "curse.maven:cloth-config-348521:5623420"
 
     // JEI ********************************************************************************************************
     compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"

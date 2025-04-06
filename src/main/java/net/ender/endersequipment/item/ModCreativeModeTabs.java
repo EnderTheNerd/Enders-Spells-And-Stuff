@@ -111,18 +111,6 @@ public class ModCreativeModeTabs {
 
                          output.accept(ModItems.SHRINK);
 
-                         output.accept(ModItems.DISPELLIUM);
-
-                         output.accept(ModItems.DISPELLIUM_HELMET);
-
-                         output.accept(ModItems.DISPELLIUM_CHESTPLATE);
-
-                         output.accept(ModItems.DISPELLIUM_LEGGINGS);
-
-                         output.accept(ModItems.DISPELLIUM_BOOTS);
-
-                         output.accept(ModItems.FIRE_CLAYMORE);
-
                          output.accept((ItemLike) ModItems.ARISTOCRAT_HELMET);
 
                          output.accept((ItemLike) ModItems.ARISTOCRAT_CHESTPLATE);

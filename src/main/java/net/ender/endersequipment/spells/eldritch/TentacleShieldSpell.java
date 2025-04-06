@@ -49,7 +49,7 @@ public class TentacleShieldSpell extends AbstractSpell {
 
     public TentacleShieldSpell() {
         this.manaCostPerLevel = 20;
-        this.baseSpellPower = 10;
+        this.baseSpellPower = 8;
         this.spellPowerPerLevel = 6;
         this.castTime = 0;
         this.baseManaCost = 25;

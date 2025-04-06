@@ -27,7 +27,7 @@ public class ModEffectRegistry {
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 8388627)
                     .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), -1,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), .05,
+                    .addAttributeModifier(AttributeRegistry.BLOOD_SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "strained"), .02,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE
                     ));
 
@@ -43,7 +43,7 @@ public class ModEffectRegistry {
 
     public static final DeferredHolder<MobEffect, MobEffect> HEARTWRENCHED = MOB_EFFECT_DEFERRED_REGISTER.register("heartwrenched",
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 8388627)
-                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "heartwrenched"), -.05,
+                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "heartwrenched"), -.02,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE
                     ));
 
@@ -52,40 +52,24 @@ public class ModEffectRegistry {
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 260409)
                     .addAttributeModifier(Attributes.SCALE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), .1,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), .1,
-                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
                     .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), 4,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.COOLDOWN_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), -.05,
-                            AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), -.05,
-                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
                     .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), -.08,
-                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), 3,
-                            AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "gigantism"), -.03,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+
 
 
     public static final DeferredHolder<MobEffect, MobEffect> MINIMIZE = MOB_EFFECT_DEFERRED_REGISTER.register("minimize",
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 260409)
                     .addAttributeModifier(Attributes.SCALE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), -.1,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.SPELL_POWER, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), -.1,
-                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
                     .addAttributeModifier(Attributes.MAX_HEALTH, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), -4,
                             AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.COOLDOWN_REDUCTION, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), .05,
-                            AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(AttributeRegistry.MANA_REGEN, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), .05,
-                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
                     .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), .08,
-                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(Attributes.ATTACK_DAMAGE, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), -3,
-                            AttributeModifier.Operation.ADD_VALUE)
-                    .addAttributeModifier(Attributes.ATTACK_SPEED, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "minimize"), .03,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+
+
 
 
     public static final DeferredHolder<MobEffect, MobEffect> BLESSEDEFFECT = MOB_EFFECT_DEFERRED_REGISTER.register("blessed",
@@ -163,9 +147,9 @@ public class ModEffectRegistry {
 
     public static final DeferredHolder<MobEffect, MobEffect> BLIZARDARMOR = MOB_EFFECT_DEFERRED_REGISTER.register("blizard_armor",
             () -> new MagicMobEffect(MobEffectCategory.BENEFICIAL, 260409)
-                    .addAttributeModifier(Attributes.ARMOR, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blizzard_armor"), .1,
+                    .addAttributeModifier(Attributes.ARMOR, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blizzard_armor"), .15,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
-                    .addAttributeModifier(Attributes.ARMOR_TOUGHNESS, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blizzard_armor"), .1,
+                    .addAttributeModifier(Attributes.ARMOR_TOUGHNESS, ResourceLocation.fromNamespaceAndPath(endersequipment.MOD_ID, "blizzard_armor"), .15,
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
     );
 
@@ -214,5 +198,7 @@ public class ModEffectRegistry {
                             AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
 
 
+    public static final DeferredHolder<MobEffect, MobEffect> SOUL_LOCK = MOB_EFFECT_DEFERRED_REGISTER.register("soul_lock",
+            () -> new SoulLockEffect(MobEffectCategory.HARMFUL, 423647));
 }
 

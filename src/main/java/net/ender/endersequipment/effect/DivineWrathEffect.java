@@ -46,8 +46,6 @@ public class DivineWrathEffect extends MagicMobEffect {
         var dz = livingEntity.getZ() - entity2.getZ();
         return (float) (dx * dx + dz * dz);
     }
-
-
     }
 
 
