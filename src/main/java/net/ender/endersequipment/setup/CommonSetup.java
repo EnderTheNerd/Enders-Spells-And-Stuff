@@ -5,6 +5,7 @@ import io.redspace.ironsspellbooks.api.magic.SpellSelectionManager;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.mobs.keeper.KeeperEntity;
 import net.ender.endersequipment.endersequipment;
+import net.ender.endersequipment.entity.death_knight.DeathKnight;
 import net.ender.endersequipment.entity.spells.madness_wave.MadnessWave;
 import net.ender.endersequipment.entity.spells.pale_flame.PaleFlame;
 import net.ender.endersequipment.entity.summoned_knight.SummonedKnight;
@@ -35,6 +36,7 @@ public class CommonSetup {
         event.put(EntityRegistry.SUMMONED_RAVAGER.get(), SummonedRavager.createAttributes().build());
         // You can technically do KeeperEntity.prepareAttributes().build() to get the attributes of the OG entity as an option
         event.put(EntityRegistry.SUMMONED_KNIGHT.get(), SummonedKnight.createAttributes().build());
+        event.put(EntityRegistry.DEATH_KNIGHT.get(), DeathKnight.createAttributes().build());
     }
 }
 
